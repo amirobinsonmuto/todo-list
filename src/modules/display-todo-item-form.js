@@ -5,7 +5,8 @@ export function displayTodoItemForm() {
 
     const displayTodoItemFormBtn = document.getElementById('displayTodoItemFormBtn');
     const todoItemFormDiv = document.getElementById('todoItemFormDiv');
-    const form = document.createElement('form');
+    const form = document.createElement('div');
+    form.setAttribute('id', 'form')
 
     function generateForm() {
         //REVISIT LATER TO CREATE A HELPER FUNCTION?
@@ -24,7 +25,6 @@ export function displayTodoItemForm() {
 
         titleDiv.append(titleLabel, titleInput);
         form.appendChild(titleDiv);
-        todoItemFormDiv.appendChild(form);
 
         //description
         const descriptionDiv = document.createElement('div');
@@ -41,7 +41,6 @@ export function displayTodoItemForm() {
 
         descriptionDiv.append(descriptionLabel, descriptionInput);
         form.appendChild(descriptionDiv);
-        todoItemFormDiv.appendChild(form);
 
         //dueDate
         const dueDateDiv = document.createElement('div');
@@ -58,7 +57,6 @@ export function displayTodoItemForm() {
 
         dueDateDiv.append(dueDateLabel, dueDateInput);
         form.appendChild(dueDateDiv);
-        todoItemFormDiv.appendChild(form);
 
         //priority
         const priorityDiv = document.createElement('div');
@@ -75,6 +73,16 @@ export function displayTodoItemForm() {
 
         priorityDiv.append(priorityLabel, priorityInput);
         form.appendChild(priorityDiv);
+        todoItemFormDiv.appendChild(form);
+
+        //submit button 
+        const submitBtn = document.createElement('button');
+        submitBtn.textContent = 'submit';
+        submitBtn.setAttribute('id', 'submitBtn');
+        submitBtn.classList.add('btn');
+        submitBtn.classList.add('btn-primary');
+        form.appendChild(submitBtn);
+
         todoItemFormDiv.appendChild(form);
 
     }   
