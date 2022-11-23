@@ -1,11 +1,11 @@
 //function to generate a todo item card
 
-function generateItemCard(item) {
-
-    const todoItemCardsDiv = document.getElementById('todoItemcardsDiv');
+const todoItemCardsDiv = document.getElementById('todoItemCardsDiv');
     
+function displayItemCard(item) {
+
     const todoItemCardsList = document.createElement('ul');
-    todoItemCardsList.classList.add('todoItemCardList');
+    todoItemCardsList.classList.add('todoItemCardsList');
 
     const titleLi = document.createElement('li');
     titleLi.textContent = item.title;
@@ -26,4 +26,4 @@ function generateItemCard(item) {
     todoItemCardsDiv.appendChild(todoItemCardsList);
 }
 
-export { generateItemCard }
+export { todoItemCardsDiv, displayItemCard }

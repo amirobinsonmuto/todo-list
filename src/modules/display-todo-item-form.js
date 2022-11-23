@@ -3,6 +3,7 @@ import { removeChild } from '../helpers/remove-child.js';
 import { todoItemFormDiv, form,  submitBtn, generateItemForm, performSubmitBtn } 
         from '../helpers/generate-form';
 import { displayTodoItemCards } from './display-todo-item-cards';
+import { todoItemCardsDiv } from '../helpers/generate-item-card'
 
 //function to display a todo item form
 //eventListner to the submit button to create an object
@@ -18,6 +19,7 @@ function displayTodoItemForm() {
 
         submitBtn.addEventListener('click', ()=>{
             createItemObj();
+            removeChild(todoItemCardsDiv);
             displayTodoItemCards();
         });
     });

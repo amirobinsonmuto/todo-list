@@ -1,8 +1,8 @@
 import { itemArr } from './todo-item-factory';
-import { generateItemCard } from '../helpers/generate-item-card'
+import { displayItemCard } from '../helpers/generate-item-card'
 
 function displayTodoItemCards() {
-    itemArr.forEach(item => generateItemCard(item));
+    itemArr.forEach(item => displayItemCard(item));
 }
 
 export { displayTodoItemCards }
