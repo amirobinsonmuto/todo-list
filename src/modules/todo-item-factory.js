@@ -1,10 +1,13 @@
+//use a function factory to create objects using the form values. 
+//add the new objects to an array (itemArr)
+
 function todoItemFactory (title, description, dueDate, priority) {
     return {title, description, dueDate, priority};
 }
 
 let itemArr = [];
 
-export function createItemObj() {
+function createItemObj() {
 
     let itemTitle = document.getElementById('itemTitle');
     let itemDescription = document.getElementById('itemDescription');
@@ -20,4 +23,6 @@ export function createItemObj() {
 
     console.log(itemArr);
 }
+
+export {itemArr, createItemObj}
 
