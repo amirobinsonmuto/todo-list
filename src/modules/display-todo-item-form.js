@@ -1,3 +1,5 @@
+import { createItemObj } from './todo-item-factory';
+
 
 export function displayTodoItemForm() {
 
@@ -21,7 +23,7 @@ export function displayTodoItemForm() {
 
         titleInput.setAttribute('type', 'text');
         titleInput.setAttribute('class', 'form-control');
-        titleInput.setAttribute('id', 'title');
+        titleInput.setAttribute('id', 'itemTitle');
 
         titleDiv.append(titleLabel, titleInput);
         form.appendChild(titleDiv);
@@ -37,7 +39,7 @@ export function displayTodoItemForm() {
 
         descriptionInput.setAttribute('type', 'text');
         descriptionInput.setAttribute('class', 'form-control');
-        descriptionInput.setAttribute('id', 'description');
+        descriptionInput.setAttribute('id', 'itemDescription');
 
         descriptionDiv.append(descriptionLabel, descriptionInput);
         form.appendChild(descriptionDiv);
@@ -53,7 +55,7 @@ export function displayTodoItemForm() {
 
         dueDateInput.setAttribute('type', 'text');
         dueDateInput.setAttribute('class', 'form-control');
-        dueDateInput.setAttribute('id', 'dueDate');
+        dueDateInput.setAttribute('id', 'itemDueDate');
 
         dueDateDiv.append(dueDateLabel, dueDateInput);
         form.appendChild(dueDateDiv);
@@ -69,11 +71,18 @@ export function displayTodoItemForm() {
 
         priorityInput.setAttribute('type', 'text');
         priorityInput.setAttribute('class', 'form-control');
-        priorityInput.setAttribute('id', 'priority');
+        priorityInput.setAttribute('id', 'itemPriority');
 
         priorityDiv.append(priorityLabel, priorityInput);
         form.appendChild(priorityDiv);
         todoItemFormDiv.appendChild(form);
+
+    }   
+
+
+    displayTodoItemFormBtn.addEventListener('click', ( )=> {
+        generateForm();
+
 
         //submit button 
         const submitBtn = document.createElement('button');
@@ -82,12 +91,12 @@ export function displayTodoItemForm() {
         submitBtn.classList.add('btn');
         submitBtn.classList.add('btn-primary');
         form.appendChild(submitBtn);
-
         todoItemFormDiv.appendChild(form);
 
-    }   
+        submitBtn.addEventListener('click', createItemObj);
+    });
 
-    displayTodoItemFormBtn.addEventListener('click', generateForm);
+
 
 }
 
