@@ -1,29 +1,12 @@
 
-function generateFormDiv(text, type, id) {
-    const window[id+'Div'] = document.createElement('div');
-    window[id+'Div'].classList.add('form-group');
-    const window[id+'Label'] = document.createElement('label');
-    const window[id+'Input'] = document.createElement('input');
+//function to generate an from to gater item info
+const todoItemFormDiv = document.getElementById('todoItemFormDiv');
+const form = document.createElement('div');
+form.setAttribute('id', 'form')
+const submitBtn = document.createElement('button');
 
-    titleLabel.textContent = 'Title';
-    titleLabel.setAttribute('for', 'title');
+function generateItemForm() {
 
-    titleInput.setAttribute('type', 'text');
-    titleInput.setAttribute('class', 'form-control');
-    titleInput.setAttribute('id', 'itemTitle');
-
-    titleDiv.append(titleLabel, titleInput);
-    form.appendChild(titleDiv);
-
-}
-
-
-
-
-
-
-
-function generateForm() {
     //REVISIT LATER TO CREATE A HELPER FUNCTION?
     //title
     const titleDiv = document.createElement('div');
@@ -91,3 +74,15 @@ function generateForm() {
     todoItemFormDiv.appendChild(form);
 
 }   
+
+//submit button 
+function performSubmitBtn() {
+    submitBtn.textContent = 'submit';
+    submitBtn.setAttribute('id', 'submitBtn');
+    submitBtn.classList.add('btn');
+    submitBtn.classList.add('btn-primary');
+    form.appendChild(submitBtn);
+    todoItemFormDiv.appendChild(form);
+}
+
+export { todoItemFormDiv, form,  submitBtn, generateItemForm, performSubmitBtn }
