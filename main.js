@@ -20,6 +20,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/helpers/generate-item-card.js":
+/*!*******************************************!*\
+  !*** ./src/helpers/generate-item-card.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"generateItemCard\": () => (/* binding */ generateItemCard)\n/* harmony export */ });\n//function to generate a todo item card\n\nfunction generateItemCard(item) {\n\n    const todoItemCardsDiv = document.getElementById('todoItemcardsDiv');\n    \n    const todoItemCardsList = document.createElement('ul');\n    todoItemCardsList.classList.add('todoItemCardList');\n\n    const titleLi = document.createElement('li');\n    titleLi.textContent = item.title;\n    const descriptionLi = document.createElement('li');\n    descriptionLi.textContent = item.description;\n    const dueDateLi = document.createElement('li');\n    dueDateLi.textContent = item.dueDate;\n    const priorityLi = document.createElement('li');\n    priorityLi.textContent = item.priority;\n\n    todoItemCardsList.append(\n        titleLi, \n        descriptionLi, \n        dueDateLi, \n        priorityLi\n    );\n    \n    todoItemCardsDiv.appendChild(todoItemCardsList);\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/helpers/generate-item-card.js?");
+
+/***/ }),
+
 /***/ "./src/helpers/remove-child.js":
 /*!*************************************!*\
   !*** ./src/helpers/remove-child.js ***!
@@ -40,13 +50,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 /***/ }),
 
+/***/ "./src/modules/display-todo-item-cards":
+/*!*********************************************!*\
+  !*** ./src/modules/display-todo-item-cards ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayTodoItemCards\": () => (/* binding */ displayTodoItemCards)\n/* harmony export */ });\n/* harmony import */ var _todo_item_factory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo-item-factory */ \"./src/modules/todo-item-factory.js\");\n/* harmony import */ var _helpers_generate_item_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/generate-item-card */ \"./src/helpers/generate-item-card.js\");\n\n\n\nfunction displayTodoItemCards() {\n    _todo_item_factory__WEBPACK_IMPORTED_MODULE_0__.itemArr.forEach(item => (0,_helpers_generate_item_card__WEBPACK_IMPORTED_MODULE_1__.generateItemCard)(item));\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/display-todo-item-cards?");
+
+/***/ }),
+
 /***/ "./src/modules/display-todo-item-form.js":
 /*!***********************************************!*\
   !*** ./src/modules/display-todo-item-form.js ***!
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayTodoItemForm\": () => (/* binding */ displayTodoItemForm)\n/* harmony export */ });\n/* harmony import */ var _todo_item_factory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo-item-factory */ \"./src/modules/todo-item-factory.js\");\n/* harmony import */ var _helpers_remove_child_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/remove-child.js */ \"./src/helpers/remove-child.js\");\n/* harmony import */ var _helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers/generate-form */ \"./src/helpers/generate-form.js\");\n\n\n\n\n//function to display a todo item form\n//eventListner to the submit button to create an object\n//using the imported createItemObj function\n\nfunction displayTodoItemForm() {\n\n    const displayTodoItemFormBtn = document.getElementById('displayTodoItemFormBtn');\n    displayTodoItemFormBtn.addEventListener('click', ()=> {\n        (0,_helpers_remove_child_js__WEBPACK_IMPORTED_MODULE_1__.removeChild)(_helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.form);\n        (0,_helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.generateItemForm)();\n        (0,_helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.performSubmitBtn)();\n        _helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.submitBtn.addEventListener('click', _todo_item_factory__WEBPACK_IMPORTED_MODULE_0__.createItemObj);\n    });\n\n}\n\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/display-todo-item-form.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayTodoItemForm\": () => (/* binding */ displayTodoItemForm)\n/* harmony export */ });\n/* harmony import */ var _todo_item_factory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo-item-factory */ \"./src/modules/todo-item-factory.js\");\n/* harmony import */ var _helpers_remove_child_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/remove-child.js */ \"./src/helpers/remove-child.js\");\n/* harmony import */ var _helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers/generate-form */ \"./src/helpers/generate-form.js\");\n/* harmony import */ var _display_todo_item_cards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./display-todo-item-cards */ \"./src/modules/display-todo-item-cards\");\n\n\n\n\n\n//function to display a todo item form\n//eventListner to the submit button to create an object\n//using the imported createItemObj function\n\nfunction displayTodoItemForm() {\n\n    const displayTodoItemFormBtn = document.getElementById('displayTodoItemFormBtn');\n    displayTodoItemFormBtn.addEventListener('click', ()=>{\n        (0,_helpers_remove_child_js__WEBPACK_IMPORTED_MODULE_1__.removeChild)(_helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.form);\n        (0,_helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.generateItemForm)();\n        (0,_helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.performSubmitBtn)();\n\n        _helpers_generate_form__WEBPACK_IMPORTED_MODULE_2__.submitBtn.addEventListener('click', ()=>{\n            (0,_todo_item_factory__WEBPACK_IMPORTED_MODULE_0__.createItemObj)();\n            (0,_display_todo_item_cards__WEBPACK_IMPORTED_MODULE_3__.displayTodoItemCards)();\n        });\n    });\n\n}\n\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/display-todo-item-form.js?");
 
 /***/ }),
 
