@@ -1,0 +1,5 @@
+ul {
+    display: flex;
+    list-style-type: none; /* Remove bullets */
+    gap: 2rem;
+}
