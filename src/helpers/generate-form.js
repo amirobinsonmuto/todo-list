@@ -76,7 +76,7 @@ function generateItemForm() {
 }   
 
 //submit button 
-function performSubmitBtn() {
+function displaySubmitBtn() {
     submitBtn.textContent = 'submit';
     submitBtn.setAttribute('id', 'submitBtn');
     submitBtn.classList.add('btn');
@@ -85,4 +85,4 @@ function performSubmitBtn() {
     todoItemFormDiv.appendChild(form);
 }
 
-export { todoItemFormDiv, form,  submitBtn, generateItemForm, performSubmitBtn }
+export { todoItemFormDiv, form,  submitBtn, generateItemForm, displaySubmitBtn }

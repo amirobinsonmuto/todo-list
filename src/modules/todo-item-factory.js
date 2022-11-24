@@ -22,6 +22,12 @@ function createItemObj() {
     ))
 
     console.log(itemArr);
+
+    itemTitle = null;
+    itemDescription = null;
+    itemDueDate = null;
+    itemPriority = null;
+
 }
 
 export {itemArr, createItemObj}

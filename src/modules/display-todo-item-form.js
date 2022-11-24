@@ -1,6 +1,6 @@
 import { createItemObj } from './todo-item-factory';
 import { removeChild } from '../helpers/remove-child.js';
-import { todoItemFormDiv, form,  submitBtn, generateItemForm, performSubmitBtn } 
+import { todoItemFormDiv, form,  submitBtn, generateItemForm,displaySubmitBtn } 
         from '../helpers/generate-form';
 import { displayTodoItemCards } from './display-todo-item-cards';
 import { todoItemCardsDiv } from '../helpers/generate-item-card'
@@ -15,12 +15,14 @@ function displayTodoItemForm() {
     displayTodoItemFormBtn.addEventListener('click', ()=>{
         removeChild(form);
         generateItemForm();
-        performSubmitBtn();
+       displaySubmitBtn();
 
         submitBtn.addEventListener('click', ()=>{
             createItemObj();
             removeChild(todoItemCardsDiv);
             displayTodoItemCards();
+            //removeForm
+            removeChild(form);
         });
     });
 
