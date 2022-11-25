@@ -10,14 +10,16 @@ class Project {
 
     //method - factory to create a todo item
     todoItemFactory (itemTitle, itemDesc, itemDueDate, itemPriority) {
-        let toDo = {
-            projTitle: this.projTitle,
-            itemTitle: itemTitle,
-            itemDesc: itemDesc,
-            itemDueDate: itemDueDate,
-            itemPriority: itemPriority
+
+        let itemObj = {
+        projTitle: this.projTitle,
+        itemTitle: itemTitle,
+        itemDesc: itemDesc,
+        itemDueDate: itemDueDate,
+        itemPriority: itemPriority
         }
-        return this.itemArr.push(toDo)
+        
+        return this.itemArr.push(itemObj);
     }
 }
 

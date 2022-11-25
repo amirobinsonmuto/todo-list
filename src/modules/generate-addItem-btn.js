@@ -5,7 +5,7 @@ function displayAddItemBtn() {
     addItemBtn.textContent = 'add todo item';
     const todoItemFormDiv = document.getElementById('todoItemFormDiv');
     todoItemFormDiv.appendChild(addItemBtn);
-    addItemBtn.setAttribute('id', this);
+    addItemBtn.setAttribute('id', 'addItemBtn');
 }
 
 export { addItemBtn, displayAddItemBtn }
