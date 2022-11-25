@@ -1,9 +1,9 @@
 
 //function to generate an from to gater item info
 const todoItemFormDiv = document.getElementById('todoItemFormDiv');
-const form = document.createElement('div');
-form.setAttribute('id', 'form')
-const submitBtn = document.createElement('button');
+const itemForm = document.createElement('div');
+itemForm.setAttribute('id', 'itemForm')
+const submitItemBtn = document.createElement('button');
 
 function generateItemForm() {
 
@@ -25,20 +25,20 @@ function generateItemForm() {
     form.appendChild(titleDiv);
 
     //description
-    const descriptionDiv = document.createElement('div');
-    descriptionDiv.classList.add('form-group');
-    const descriptionLabel = document.createElement('label');
-    const descriptionInput = document.createElement('input');
+    const descrDiv = document.createElement('div');
+    descrDiv.classList.add('form-group');
+    const descrLabel = document.createElement('label');
+    const descrInput = document.createElement('input');
 
-    descriptionLabel.textContent = 'description';
-    descriptionLabel.setAttribute('for', 'description');
+    descrLabel.textContent = 'descr';
+    descrLabel.setAttribute('for', 'descr');
 
-    descriptionInput.setAttribute('type', 'text');
-    descriptionInput.setAttribute('class', 'form-control');
-    descriptionInput.setAttribute('id', 'itemDescription');
+    descrInput.setAttribute('type', 'text');
+    descrInput.setAttribute('class', 'form-control');
+    descrInput.setAttribute('id', 'itemDescr');
 
-    descriptionDiv.append(descriptionLabel, descriptionInput);
-    form.appendChild(descriptionDiv);
+    descrDiv.append(descrLabel, descrInput);
+    form.appendChild(descrDiv);
 
     //dueDate
     const dueDateDiv = document.createElement('div');
@@ -76,13 +76,13 @@ function generateItemForm() {
 }   
 
 //submit button 
-function displaySubmitBtn() {
-    submitBtn.textContent = 'submit';
-    submitBtn.setAttribute('id', 'submitBtn');
-    submitBtn.classList.add('btn');
-    submitBtn.classList.add('btn-primary');
-    form.appendChild(submitBtn);
-    todoItemFormDiv.appendChild(form);
+function displaySubmitItemBtn() {
+    submitItemBtn.textContent = 'submit';
+    submitItemBtn.setAttribute('id', 'submitItemBtn');
+    submitItemBtn.classList.add('btn');
+    submitItemBtn.classList.add('btn-primary');
+    itemForm.appendChild(submitItemBtn);
+    todoItemFormDiv.appendChild(itemForm);
 }
 
-export { todoItemFormDiv, form,  submitBtn, generateItemForm, displaySubmitBtn }
+export { todoItemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySubmitItemBtn }

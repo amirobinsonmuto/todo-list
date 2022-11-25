@@ -1,3 +1,3 @@
-import { displayTodoItemForm } from './modules/display-todo-item-form';
+import { displayProjForm } from './modules/display-proj-form';
 
-displayTodoItemForm();
+displayProjForm();
