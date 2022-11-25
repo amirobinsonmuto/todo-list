@@ -26,7 +26,7 @@ function displayProjForm() {
                 displaySubmitItemBtn(); //working 
 
                 submitItemBtn.addEventListener('click', ()=>{
-                projArr[0].todoItemFactory('hello','hello','hello','hello','hello'); 
+                projArr[0].createItemObj(); 
                 console.log(projArr[0].itemArr);
                 })
             })
