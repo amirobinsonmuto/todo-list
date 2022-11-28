@@ -37,8 +37,13 @@ class Project {
             itemTitle.value,
             itemDescr.value,
             itemDueDate.value,
-            itemPriority.valueS
+            itemPriority.value
         ))
+
+        itemTitle.value = "";
+        itemDescr.value = "";
+        itemDueDate.value = ""; 
+        itemPriority.value = "";
 
     }
 }
@@ -55,6 +60,9 @@ function createProjObj() {
     projArr.push(newObj);
     let indexNum = projArr.indexOf(newObj);
     addItemBtn.setAttribute('data-indexNum', indexNum);
+
+    projTitle.value = "";
+    projDescr.value = "";
 
 };
 

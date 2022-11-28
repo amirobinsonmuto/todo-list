@@ -8,10 +8,6 @@ import { todoItemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySub
 import { removeAllChildren } from '../helpers/remove-child';
     
 
-//function to display a todo item form
-//eventListner to the submit button to create an object
-//using the imported createItemObj function
-
 function displayProjForm() {
 
     const addProjBtn = document.getElementById('addProjBtn');
