@@ -1,3 +1,5 @@
+import { addItemBtn } from './generate-addItem-btn.js';
+
 //Project class
 const projArr = []
 
@@ -49,12 +51,10 @@ function createProjObj() {
     let projDescr = document.getElementById('projDescr');
 
     //create a new proj obj using Project class and push it to projArr
-    let newObj = (new Project (projTitle.value, projDescr.value,))
+    let newObj = new Project (projTitle.value, projDescr.value,)
     projArr.push(newObj);
     let indexNum = projArr.indexOf(newObj);
-    console.log(projArr);
-
-    return indexNum
+    addItemBtn.setAttribute('data-indexNum', indexNum);
 
 };
 

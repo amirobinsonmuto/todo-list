@@ -1,3 +1,4 @@
+import { addItemBtn } from './generate-addItem-btn.js';
 
 //function to generate an from to gater item info
 const todoItemFormDiv = document.getElementById('todoItemFormDiv');
@@ -88,6 +89,8 @@ function displaySubmitItemBtn() {
     submitItemBtn.classList.add('btn-primary');
     itemForm.appendChild(submitItemBtn);
     todoItemFormDiv.appendChild(itemForm);
+    let addItemBtnIndex = addItemBtn.getAttribute('data-indexNum');
+    submitItemBtn.setAttribute('data-indexNum', addItemBtnIndex);
 }
 
 export { todoItemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySubmitItemBtn }

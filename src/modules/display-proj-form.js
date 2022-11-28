@@ -17,32 +17,41 @@ function displayProjForm() {
     const addProjBtn = document.getElementById('addProjBtn');
     
     addProjBtn.addEventListener('click', ()=>{
-        generateProjForm(); //generate a proj form
-        displaySubmitProjBtn(); //display a submit proj button
+        //generate a proj form
+        generateProjForm();
+        //display a submit proj button
+        displaySubmitProjBtn(); 
     })
 
-    submitProjBtn.addEventListener('click', ()=>{            
-        let indexNum = createProjObj(); //create a proj obj and push it to projArr and get an index number
-        console.log(indexNum);
-        displayAddItemBtn(); //display an add item button
-        addItemBtn.setAttribute('data-index', indexNum);
+    submitProjBtn.addEventListener('click', ()=>{ 
+        //create a proj obj and push it to projArr 
+        //and assign in the index number to submitProjBtn           
+        createProjObj(); 
+        //display an add item button
+        displayAddItemBtn(); 
         projFormDiv.removeChild(projForm);
     })
 
     addItemBtn.addEventListener('click', ()=>{
-        generateItemForm(); //generate a todo item form
-        displaySubmitItemBtn(); //display a submit item button
-        let addItemBtnIndex = addItemBtn.getAttribute('data-index');
-        submitItemBtn.setAttribute('data-index', addItemBtnIndex);
+        //generate a todo item form
+        generateItemForm(); 
+        //display a submit item button and transfer the index number attached 
+        //on submitProjBtn to addItemBtn
+        displaySubmitItemBtn(); 
+
     })
 
     submitItemBtn.addEventListener('click', ()=>{
-    let submitItemBtnIndex = submitItemBtn.getAttribute('data-index');
-    projArr[submitItemBtnIndex].createItemObj();
-    console.log(projArr);
-    console.log(projArr[submitItemBtnIndex].itemArr);
-    removeAllChildren(todoItemFormDiv);
-    displayAddItemBtn(); //display an add item button
+        //get the index number from the submitItemBtn
+        let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
+        //call a method using the index number
+        projArr[submitItemBtnIndex].createItemObj();
+        removeAllChildren(todoItemFormDiv);
+        //display an add item button again
+        displayAddItemBtn(); 
+
+        console.log(projArr);
+        console.log(projArr[submitItemBtnIndex].itemArr);
     })
 
 }
