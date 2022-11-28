@@ -6,6 +6,7 @@ import { addItemBtn, displayAddItemBtn } from './generate-addItem-btn.js';
 import { todoItemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySubmitItemBtn } 
         from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
+import { displayProjArr } from './display-projArr';
     
 
 function displayProjForm() {
@@ -26,6 +27,9 @@ function displayProjForm() {
         //display an add item button
         displayAddItemBtn(); 
         projFormDiv.removeChild(projForm);
+
+        displayProjArr(projArr);
+        console.log(projArr);
     })
 
     addItemBtn.addEventListener('click', ()=>{
@@ -46,7 +50,6 @@ function displayProjForm() {
         //display an add item button again
         displayAddItemBtn(); 
 
-        console.log(projArr);
         console.log(projArr[submitItemBtnIndex].itemArr);
     })
 
