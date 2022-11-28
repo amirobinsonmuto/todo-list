@@ -7,6 +7,7 @@ import { todoItemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySub
         from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
 import { displayProjArr } from './display-projArr';
+import { displayItemArr } from './display-itemArr';
     
 
 function displayProjForm() {
@@ -46,8 +47,10 @@ function displayProjForm() {
         let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
         //call a method using the index number
         projArr[submitItemBtnIndex].createItemObj();
-        removeAllChildren(todoItemFormDiv);
+        removeAllChildren(itemFormDiv);
         //display an add item button again
+
+        displayItemArr(projArr[submitItemBtnIndex].itemArr);
         displayAddItemBtn(); 
 
         console.log(projArr[submitItemBtnIndex].itemArr);

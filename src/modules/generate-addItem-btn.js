@@ -3,8 +3,8 @@ const addItemBtn = document.createElement('button');
 
 function displayAddItemBtn() {
     addItemBtn.textContent = 'add todo item';
-    const todoItemFormDiv = document.getElementById('todoItemFormDiv');
-    todoItemFormDiv.appendChild(addItemBtn);
+    const itemFormDiv = document.getElementById('itemFormDiv');
+    itemFormDiv.appendChild(addItemBtn);
     addItemBtn.setAttribute('id', 'addItemBtn');
     addItemBtn.classList.add('btn');
     addItemBtn.classList.add('btn-secondary');

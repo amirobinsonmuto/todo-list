@@ -1,7 +1,7 @@
 import { addItemBtn } from './generate-addItem-btn.js';
 
 //function to generate an from to gater item info
-const todoItemFormDiv = document.getElementById('todoItemFormDiv');
+const itemFormDiv = document.getElementById('itemFormDiv');
 const itemForm = document.createElement('div');
 itemForm.setAttribute('id', 'itemForm')
 const submitItemBtn = document.createElement('button');
@@ -77,7 +77,7 @@ function generateItemForm() {
 
     priorityDiv.append(priorityLabel, priorityInput);
     itemForm.appendChild(priorityDiv);
-    todoItemFormDiv.appendChild(itemForm);
+    itemFormDiv.appendChild(itemForm);
 
 }   
 
@@ -88,9 +88,9 @@ function displaySubmitItemBtn() {
     submitItemBtn.classList.add('btn');
     submitItemBtn.classList.add('btn-primary');
     itemForm.appendChild(submitItemBtn);
-    todoItemFormDiv.appendChild(itemForm);
+    itemFormDiv.appendChild(itemForm);
     let addItemBtnIndex = addItemBtn.getAttribute('data-indexNum');
     submitItemBtn.setAttribute('data-indexNum', addItemBtnIndex);
 }
 
-export { todoItemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySubmitItemBtn }
+export { itemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySubmitItemBtn }

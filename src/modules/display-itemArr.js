@@ -1,29 +1,17 @@
-//function to generate a todo item card
+import { removeAllChildren } from '../helpers/remove-child';
 
-const todoItemCardsDiv = document.getElementById('todoItemCardsDiv');
+const itemArrUl = document.getElementById('itemArrUl');
     
-function displayItemCard(item) {
+function displayItemArr(itemArr) {
 
-    const todoItemCardsList = document.createElement('ul');
-    todoItemCardsList.classList.add('todoItemCardsList');
+    removeAllChildren(itemArrUl);
 
-    const titleLi = document.createElement('li');
-    titleLi.textContent = item.title;
-    const descriptionLi = document.createElement('li');
-    descriptionLi.textContent = item.description;
-    const dueDateLi = document.createElement('li');
-    dueDateLi.textContent = item.dueDate;
-    const priorityLi = document.createElement('li');
-    priorityLi.textContent = item.priority;
+    itemArr.forEach( (el) => {
+        let itemArrLi = document.createElement('li');
+        itemArrLi.textContent = el.itemTitle;
+        itemArrUl.append(itemArrLi);
+    })  
 
-    todoItemCardsList.append(
-        titleLi, 
-        descriptionLi, 
-        dueDateLi, 
-        priorityLi
-    );
-    
-    todoItemCardsDiv.appendChild(todoItemCardsList);
 }
 
-export { todoItemCardsDiv, displayItemCard }
+export { displayItemArr }
