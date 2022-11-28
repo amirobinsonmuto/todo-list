@@ -35,14 +35,8 @@ class Project {
             itemTitle.value,
             itemDescr.value,
             itemDueDate.value,
-            itemPriority.value
+            itemPriority.valueS
         ))
-
-        //set variables to null for the next round
-        itemTitle = null;
-        itemDescr = null;
-        itemDueDate = null;
-        itemPriority = null;
 
     }
 }
@@ -55,13 +49,13 @@ function createProjObj() {
     let projDescr = document.getElementById('projDescr');
 
     //create a new proj obj using Project class and push it to projArr
-    projArr.push(new Project (projTitle.value, projDescr.value,))
-
+    let newObj = (new Project (projTitle.value, projDescr.value,))
+    projArr.push(newObj);
+    let indexNum = projArr.indexOf(newObj);
     console.log(projArr);
 
-    //set variable to null for the next round
-    projTitle = null;
-    projDescr = null;
-}
+    return indexNum
+
+};
 
 export { projArr, createProjObj }

@@ -1,18 +1,24 @@
 
 //function to generate an from to gater project info
 const projFormDiv = document.getElementById('projFormDiv');
-const form = document.createElement('div');
-form.setAttribute('id', 'form')
+const projForm = document.createElement('div');
+projForm.setAttribute('id', 'projForm')
 const submitProjBtn = document.createElement('button');
+//title
+const projTitleDiv = document.createElement('div');
+projTitleDiv.classList.add('form-group');
+const projTitleLabel = document.createElement('label');
+const projTitleInput = document.createElement('input');
+//description
+const projDescrDiv = document.createElement('div');
+projDescrDiv.classList.add('form-group');
+const projDescrLabel = document.createElement('label');
+const projDescrInput = document.createElement('input');
+
 
 function generateProjForm() {
 
     //title
-    const projTitleDiv = document.createElement('div');
-    projTitleDiv.classList.add('form-group');
-    const projTitleLabel = document.createElement('label');
-    const projTitleInput = document.createElement('input');
-
     projTitleLabel.textContent = 'proj Title';
     projTitleLabel.setAttribute('for', 'projTitle');
 
@@ -21,14 +27,9 @@ function generateProjForm() {
     projTitleInput.setAttribute('id', 'projTitle');
 
     projTitleDiv.append(projTitleLabel, projTitleInput);
-    form.appendChild(projTitleDiv);
+    projForm.appendChild(projTitleDiv);
 
     //description
-    const projDescrDiv = document.createElement('div');
-    projDescrDiv.classList.add('form-group');
-    const projDescrLabel = document.createElement('label');
-    const projDescrInput = document.createElement('input');
-
     projDescrLabel.textContent = 'proj Descr';
     projDescrLabel.setAttribute('for', 'projDescr');
 
@@ -37,7 +38,9 @@ function generateProjForm() {
     projDescrInput.setAttribute('id', 'projDescr');
 
     projDescrDiv.append(projDescrLabel, projDescrInput);
-    form.appendChild(projDescrDiv);
+    projForm.appendChild(projDescrDiv);
+
+    projFormDiv.appendChild(projForm);
 
 }
     
@@ -47,8 +50,9 @@ function displaySubmitProjBtn() {
     submitProjBtn.setAttribute('id', 'submitProjBtn');
     submitProjBtn.classList.add('btn');
     submitProjBtn.classList.add('btn-primary');
-    form.appendChild(submitProjBtn);
-    projFormDiv.appendChild(form);
+    submitProjBtn.classList.add('mt-3');
+    projForm.appendChild(submitProjBtn);
+    projFormDiv.appendChild(projForm);
 }
 
-export { projFormDiv, form,  submitProjBtn, generateProjForm, displaySubmitProjBtn }
+export { projFormDiv, projForm,  submitProjBtn, generateProjForm, displaySubmitProjBtn }
