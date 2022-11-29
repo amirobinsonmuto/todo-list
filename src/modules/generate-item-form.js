@@ -1,4 +1,3 @@
-import { addItemBtn } from './generate-addItem-btn.js';
 
 //function to generate an from to gater item info
 const itemFormDiv = document.getElementById('itemFormDiv');
@@ -82,7 +81,7 @@ function generateItemForm() {
 }   
 
 //submit button 
-function displaySubmitItemBtn() {
+function displaySubmitItemBtn(addItemBtn) {
     submitItemBtn.textContent = 'submit';
     submitItemBtn.setAttribute('id', 'submitItemBtn');
     submitItemBtn.classList.add('btn');

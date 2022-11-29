@@ -1,5 +1,3 @@
-import { addItemBtn } from './generate-addItem-btn.js';
-
 //Project class
 const projArr = []
 
@@ -49,7 +47,7 @@ class Project {
 }
 
 //method - method to actually create a project
-function createProjObj() {
+function createProjObj(addItemBtn) {
 
     //get the values from the proj form
     let projTitle = document.getElementById('projTitle');
