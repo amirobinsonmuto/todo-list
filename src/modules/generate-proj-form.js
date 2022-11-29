@@ -4,6 +4,7 @@ const projFormDiv = document.getElementById('projFormDiv');
 const projForm = document.createElement('div');
 projForm.setAttribute('id', 'projForm')
 const submitProjBtn = document.createElement('button');
+const cancelProjBtn = document.createElement('button');
 //title
 const projTitleDiv = document.createElement('div');
 projTitleDiv.classList.add('form-group');
@@ -51,8 +52,22 @@ function displaySubmitProjBtn() {
     submitProjBtn.classList.add('btn');
     submitProjBtn.classList.add('btn-primary');
     submitProjBtn.classList.add('mt-3');
+    submitProjBtn.classList.add('me-2');
     projForm.appendChild(submitProjBtn);
     projFormDiv.appendChild(projForm);
 }
 
-export { projFormDiv, projForm,  submitProjBtn, generateProjForm, displaySubmitProjBtn }
+function displayCancelProjBtn() {
+    cancelProjBtn.textContent = 'cancel';
+    cancelProjBtn.setAttribute('id', 'cancelProjBtn');
+    cancelProjBtn.classList.add('btn');
+    cancelProjBtn.classList.add('btn-secondary');
+    cancelProjBtn.classList.add('mt-3');
+    projForm.appendChild(cancelProjBtn);
+    projFormDiv.appendChild(projForm);
+}
+
+
+
+export { projFormDiv, projForm,  submitProjBtn, cancelProjBtn,
+         generateProjForm, displaySubmitProjBtn, displayCancelProjBtn }

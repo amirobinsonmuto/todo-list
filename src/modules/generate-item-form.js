@@ -4,6 +4,7 @@ const itemFormDiv = document.getElementById('itemFormDiv');
 const itemForm = document.createElement('div');
 itemForm.setAttribute('id', 'itemForm')
 const submitItemBtn = document.createElement('button');
+const cancelItemBtn = document.createElement('button');
 //title
 const titleDiv = document.createElement('div');
 titleDiv.classList.add('form-group');
@@ -86,10 +87,21 @@ function displaySubmitItemBtn(addItemBtn) {
     submitItemBtn.setAttribute('id', 'submitItemBtn');
     submitItemBtn.classList.add('btn');
     submitItemBtn.classList.add('btn-primary');
+    submitItemBtn.classList.add('me-2');
     itemForm.appendChild(submitItemBtn);
     itemFormDiv.appendChild(itemForm);
     let addItemBtnIndex = addItemBtn.getAttribute('data-indexNum');
     submitItemBtn.setAttribute('data-indexNum', addItemBtnIndex);
 }
 
-export { itemFormDiv, itemForm,  submitItemBtn, generateItemForm, displaySubmitItemBtn }
+function displayCancelItemBtn() {
+    cancelItemBtn.textContent = 'cancel';
+    cancelItemBtn.setAttribute('id', 'cancelItemBtn');
+    cancelItemBtn.classList.add('btn');
+    cancelItemBtn.classList.add('btn-secondary');
+    itemForm.appendChild(cancelItemBtn);
+    itemFormDiv.appendChild(itemForm);
+}
+
+export { itemFormDiv, itemForm,  submitItemBtn, cancelItemBtn,
+         generateItemForm, displaySubmitItemBtn, displayCancelItemBtn }
