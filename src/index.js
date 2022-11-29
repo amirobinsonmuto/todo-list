@@ -1,3 +1,3 @@
-import { displayProjForm } from './modules/display-proj-form';
+import { addEventListners } from './modules/add-eventlistners';
 
-displayProjForm();
+addEventListners();

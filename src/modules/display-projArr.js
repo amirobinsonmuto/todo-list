@@ -1,6 +1,7 @@
 import { removeAllChildren } from '../helpers/remove-child';
 
 const projArrUl = document.getElementById('projArrUl');
+const activeProjTitleDiv = document.getElementById('activeProjTitleDiv');
     
 function displayProjArr(projArr) {
 
@@ -15,7 +16,7 @@ function displayProjArr(projArr) {
     })
 
     projArrUl.lastElementChild.classList.add('active');
-
+    activeProjTitleDiv.textContent = 'Project:' + projArr[projArr.length-1].projTitle;
 }
 
 function toggleProjs(addItemBtn) {
@@ -26,6 +27,8 @@ function toggleProjs(addItemBtn) {
             addItemBtn.setAttribute('data-indexNum', indexNum);
             projArrLis.forEach(f => f.classList.remove('active'));
             li.classList.add('active');
+            let activeObj = document.querySelector('.active');
+            activeProjTitleDiv.textContent = 'Project:' + activeObj.textContent;
         })
     })
 }

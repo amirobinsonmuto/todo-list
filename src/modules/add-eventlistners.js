@@ -10,7 +10,7 @@ import { displayProjArr, toggleProjs } from './display-projArr';
 import { displayItemArr } from './display-itemArr';
     
 
-function displayProjForm() {
+function addEventListners() {
 
     const addProjBtn = document.getElementById('addProjBtn');
     
@@ -60,7 +60,7 @@ function displayProjForm() {
 }
 
 
-export { displayProjForm }
+export { addEventListners }
 
 
 
