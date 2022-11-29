@@ -21,6 +21,8 @@ function toggleProjs(addItemBtn) {
         li.addEventListener('click', ()=>{
             let indexNum = li.getAttribute('id');
             addItemBtn.setAttribute('data-indexNum', indexNum);
+            projArrLis.forEach(f => f.classList.remove('active'));
+            li.classList.add('active');
         })
     })
 }
