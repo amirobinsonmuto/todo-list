@@ -13,6 +13,9 @@ function displayProjArr(projArr) {
         projArrLi.setAttribute('id', projArr.indexOf(el));
         projArrLi.classList.add('projArrLi');
     })
+
+    projArrUl.lastElementChild.classList.add('active');
+
 }
 
 function toggleProjs(addItemBtn) {
