@@ -118,3 +118,7 @@ li {
     text-decoration: line-through;
     color: red;
 }
+
+.hidden {
+    display: none;
+}
