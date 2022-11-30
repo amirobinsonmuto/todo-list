@@ -102,8 +102,13 @@ li {
 .itemArrLi {
     display: flex;
     justify-content: space-between;
-    border: 2px red solid;
+    padding: 10px;
 } 
+
+.itemArrLi:hover {
+    background-color: var(--color-hl-grey);
+}
+
 
 .active {
     background-color: var(--color-hl-grey);

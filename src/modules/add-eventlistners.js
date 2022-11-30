@@ -9,7 +9,8 @@ import { todoItemFormDiv, itemForm,  submitItemBtn, cancelItemBtn,
         from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
 import { displayProjArr, toggleProjs } from './display-projArr';
-import { displayItemArr } from './display-itemArr';
+import { displayItemArr, deleteItem } from './display-itemArr';
+import { differenceInMilliseconds } from 'date-fns';
     
 
 function addEventListners() {
@@ -67,11 +68,8 @@ function addEventListners() {
         displayItemArr(projArr[submitItemBtnIndex].itemArr);
         displayAddItemBtn();
 
-
         console.log(projArr[submitItemBtnIndex].itemArr);
     })
-
-
 
 }
 
