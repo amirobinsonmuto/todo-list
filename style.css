@@ -114,7 +114,7 @@ li {
     background-color: var(--color-hl-grey);
 }
 
-.strikeThrough  {
+.strike-through  {
     text-decoration: line-through;
     color: red;
 }
