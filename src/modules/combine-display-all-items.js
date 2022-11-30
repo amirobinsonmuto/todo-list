@@ -34,6 +34,8 @@ function displayAllItemFlattedArray(arr) {
         itemArrLi.setAttribute('data-itemindexnum', itemIndexNum);
         let itemArrLiItemTitle = document.createElement('p');
         itemArrLiItemTitle.textContent = el.itemTitle
+        let projTitle = document.createElement('p');
+        projTitle.textContent = 'Project: ' + el.projTitle
         let itemArrLiItemDueDate = document.createElement('p');
         itemArrLiItemDueDate.textContent = el.itemDueDate;
         let cpltIcon = document.createElement('p');
@@ -42,7 +44,7 @@ function displayAllItemFlattedArray(arr) {
         let delIcon = document.createElement('p');
         delIcon.textContent = 'Delete';
         delIcon.classList.add('delIcon');
-        itemArrLi.append(itemArrLiItemTitle, itemArrLiItemDueDate, 
+        itemArrLi.append(itemArrLiItemTitle, projTitle, itemArrLiItemDueDate, 
                          cpltIcon, delIcon);
         itemArrLi.classList.add('itemArrLi');
         itemArrUl.append(itemArrLi);
