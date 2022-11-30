@@ -2,8 +2,8 @@ import { removeAllChildren } from '../helpers/remove-child';
 import { displayItemArr } from './display-itemArr';
 import { projArr } from './proj-class.js';
 
-const projArrUl = document.getElementById('projArrUl');
-const activeProjTitleDiv = document.getElementById('activeProjTitleDiv');
+const projArrUl = document.getElementById('projarr-ul');
+const activeProjTitleDiv = document.getElementById('active-proj-title-div');
     
 function displayProjArr() {
 

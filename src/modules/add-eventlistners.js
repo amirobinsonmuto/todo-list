@@ -4,7 +4,7 @@ import { projFormDiv, projForm,  submitProjBtn, cancelProjBtn,
         from './generate-proj-form.js';
 import { projArr, createProjObj } from './proj-class.js';
 import { addItemBtn, displayAddItemBtn } from './generate-addItem-btn.js';
-import { todoItemFormDiv, itemForm,  submitItemBtn, cancelItemBtn,
+import { itemFormDiv, itemForm,  submitItemBtn, cancelItemBtn,
         generateItemForm, displaySubmitItemBtn, displayCancelItemBtn } 
         from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
@@ -15,7 +15,7 @@ import { differenceInMilliseconds } from 'date-fns';
 
 function addEventListners() {
 
-    const addProjBtn = document.getElementById('addProjBtn');
+    const addProjBtn = document.getElementById('add-proj-btn');
     
     addProjBtn.addEventListener('click', ()=>{
         //generate a proj form

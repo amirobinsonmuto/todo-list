@@ -1,6 +1,6 @@
 import { removeAllChildren } from '../helpers/remove-child';
 
-const itemArrUl = document.getElementById('itemArrUl');
+const itemArrUl = document.getElementById('itemarr-ul');
     
 function displayItemArr(itemArr) {
 
@@ -26,7 +26,7 @@ function displayItemArr(itemArr) {
         itemArrUl.append(itemArrLi);
 
         if (el.isItemComplete === true) {
-            itemArrLiItemTitle.classList.add('strikeThrough');
+            itemArrLiItemTitle.classList.add('strike-through');
         }
     })  
 

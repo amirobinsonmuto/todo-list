@@ -1,6 +1,6 @@
 
 //function to generate an from to gater project info
-const projFormDiv = document.getElementById('projFormDiv');
+const projFormDiv = document.getElementById('proj-form-div');
 const projForm = document.createElement('div');
 projForm.setAttribute('id', 'projForm')
 const submitProjBtn = document.createElement('button');
