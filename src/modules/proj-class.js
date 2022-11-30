@@ -13,13 +13,12 @@ class Project {
     createItemObj() {
 
         //factory function to create an item obj
-        function todoItemFactory(projTitle, itemTitle, itemDesc, itemDueDate, itemPriority) {
+        function todoItemFactory(projTitle, itemTitle, itemDesc, itemDueDate) {
             return {
             projTitle: projTitle,
             itemTitle: itemTitle,
             itemDesc: itemDesc,
             itemDueDate: itemDueDate,
-            itemPriority: itemPriority
             }
         }
 
@@ -27,7 +26,6 @@ class Project {
         let itemTitle = document.getElementById('itemTitle');
         let itemDescr = document.getElementById('itemDescr');
         let itemDueDate = document.getElementById('itemDueDate');
-        let itemPriority = document.getElementById('itemPriority');
 
         //create an item obj using the factory function and push it to the itemArr
         this.itemArr.push(todoItemFactory(
@@ -35,13 +33,12 @@ class Project {
             itemTitle.value,
             itemDescr.value,
             itemDueDate.value,
-            itemPriority.value
+
         ))
 
         itemTitle.value = "";
         itemDescr.value = "";
         itemDueDate.value = ""; 
-        itemPriority.value = "";
 
     }
 }
