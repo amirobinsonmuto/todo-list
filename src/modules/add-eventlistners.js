@@ -11,7 +11,7 @@ import { removeAllChildren } from '../helpers/remove-child';
 import { displayProjArr, toggleProjs } from './display-projArr';
 import { displayItemArr, deleteItem } from './display-itemArr';
 import { differenceInMilliseconds } from 'date-fns';
-    
+import { allItemsFlatted, allTaskBtn, combineAllItems } from './combine-all-items';
 
 function addEventListners() {
 
@@ -69,6 +69,11 @@ function addEventListners() {
         displayAddItemBtn();
 
         console.log(projArr[submitItemBtnIndex].itemArr);
+    })
+
+    allTaskBtn.addEventListener('click', ()=>{
+        combineAllItems();
+        displayItemArr(allItemsFlatted);
     })
 
 }
