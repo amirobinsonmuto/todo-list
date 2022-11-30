@@ -27,6 +27,7 @@ function displayItemArr(itemArr) {
 
         if (el.isItemComplete === true) {
             itemArrLiItemTitle.classList.add('strike-through');
+            cpltIcon.classList.add('hidden');
         }
     })  
 
