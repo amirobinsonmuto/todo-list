@@ -19,6 +19,7 @@ class Project {
             itemTitle: itemTitle,
             itemDesc: itemDesc,
             itemDueDate: itemDueDate,
+            isItemComplete: ''
             }
         }
 

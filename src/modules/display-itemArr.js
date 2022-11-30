@@ -20,23 +20,29 @@ function displayItemArr(itemArr) {
         let delIcon = document.createElement('p');
         delIcon.textContent = 'Delete';
         delIcon.classList.add('delIcon');
-
         itemArrLi.append(itemArrLiItemTitle, itemArrLiItemDueDate, 
                          cpltIcon, delIcon);
         itemArrLi.classList.add('itemArrLi');
         itemArrUl.append(itemArrLi);
+
+        if (el.isItemComplete === true) {
+            itemArrLiItemTitle.classList.add('strikeThrough');
+        }
     })  
 
-    cpltItem();
+    cpltItem(itemArr);
     deleteItem(itemArr);
     
 }
 
-function cpltItem() {
+function cpltItem(itemArr) {
     let cpltIcons = document.querySelectorAll('.cpltIcon');
     cpltIcons.forEach( (cpltIcon) => {
         cpltIcon.addEventListener('click', (e) => {
-            cpltIcon.parentElement.classList.add('strikeThrough');
+            let index = e.target.parentElement.getAttribute('data-itemindexnum');
+            itemArr[index].isItemComplete = true;
+            console.log(itemArr);
+            displayItemArr(itemArr);
         })
     })
 }
