@@ -24,6 +24,9 @@ function displayAllItemFlattedArray(arr) {
     removeAllChildren(itemArrUl);
     removeAllChildren(itemFormDiv);
     activeProjTitleDiv.textContent = "All items";
+    allTaskBtn.classList.add('active');
+    let projArrLis = document.querySelectorAll('.projArrLi');
+    projArrLis.forEach(f => f.classList.remove('active'));
 
     arr.forEach( (el) => {
         let itemArrLi = document.createElement('li');
