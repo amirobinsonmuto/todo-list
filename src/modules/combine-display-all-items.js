@@ -2,7 +2,6 @@ import { projArr } from './proj-class.js';
 import { itemArrUl } from './display-itemArr';
 import { itemFormDiv } from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
-import { cpltItem, deleteItem } from './display-itemArr';
 import { activeProjTitleDiv }  from './display-projArr';
 
 let allItemsFlatted = []
@@ -28,6 +27,8 @@ function displayAllItemFlattedArray(arr) {
 
     arr.forEach( (el) => {
         let itemArrLi = document.createElement('li');
+        let itemIndexNum = arr.indexOf(el);
+        itemArrLi.setAttribute('data-itemindexnum', itemIndexNum);
         let itemArrLiItemTitle = document.createElement('p');
         itemArrLiItemTitle.textContent = el.itemTitle
         let itemArrLiItemDueDate = document.createElement('p');
@@ -49,7 +50,6 @@ function displayAllItemFlattedArray(arr) {
         }
     })  
 
-    //i need to reflect these two to the original itemArr too 
     cpltItemAll(arr);
     deleteItemAll(arr);  
 }
@@ -61,6 +61,15 @@ function cpltItemAll(arr) {
             let index = e.target.parentElement.getAttribute('data-itemindexnum');
             arr[index].isItemComplete = true;
             displayAllItemFlattedArray(arr);
+            
+            //find the index number of the proj object that matches the proj title 
+            const whichProject = projArr.find( el => el.projTitle == arr[index].projTitle );
+            const projArrIndex = projArr.indexOf(whichProject)
+
+            //find the index number of the item object in the respective proj obj
+            const findItemObj = projArr[projArrIndex].itemArr.find(el => el == arr[index]);
+            let finalindex = projArr[projArrIndex].itemArr.indexOf(findItemObj);
+            projArr[projArrIndex].itemArr[finalindex].isItemComplete = true;
 
         })
     })
@@ -71,9 +80,20 @@ function deleteItemAll(arr) {
     delIcons.forEach( (del) => {
         del.addEventListener('click', (e) => {
             let index = e.target.parentElement.getAttribute('data-itemindexnum');
+            
+            //find the index number of the proj object that matches the proj title 
+            const whichProject = projArr.find( el => el.projTitle == arr[index].projTitle );
+            const projArrIndex = projArr.indexOf(whichProject)
+
+            //find the index number of the item object in the respective proj obj
+            const findItemObj = projArr[projArrIndex].itemArr.find(el => el == arr[index]);
+            let finalindex = projArr[projArrIndex].itemArr.indexOf(findItemObj);
+            projArr[projArrIndex].itemArr.splice(finalindex, 1);
+
             arr.splice(index, 1);
             removeAllChildren(itemArrUl);
             displayAllItemFlattedArray(arr);
+
         })
     })
 }
