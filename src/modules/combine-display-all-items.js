@@ -1,15 +1,33 @@
+import { projArr } from './proj-class.js';
+import { itemArrUl } from './display-itemArr';
+import { itemFormDiv } from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
+import { cpltItem, deleteItem } from './display-itemArr';
+import { activeProjTitleDiv }  from './display-projArr';
 
-const itemArrUl = document.getElementById('itemarr-ul');
-    
-function displayItemArr(itemArr) {
+let allItemsFlatted = []
+const allTaskBtn = document.getElementById('display-all-items');
+
+function combineAllItems(){
+
+    let allItems = [];
+
+    for (let i=0; i<projArr.length; i++){
+        allItems.push(projArr[i].itemArr);
+    }
+
+    allItemsFlatted = allItems.flat(1);
+    console.log(allItemsFlatted);
+}
+
+function displayAllItemFlattedArray(arr) {
 
     removeAllChildren(itemArrUl);
+    removeAllChildren(itemFormDiv);
+    activeProjTitleDiv.textContent = "All items";
 
-    itemArr.forEach( (el) => {
+    arr.forEach( (el) => {
         let itemArrLi = document.createElement('li');
-        let itemIndexNum = itemArr.indexOf(el);
-        itemArrLi.setAttribute('data-itemindexnum', itemIndexNum);
         let itemArrLiItemTitle = document.createElement('p');
         itemArrLiItemTitle.textContent = el.itemTitle
         let itemArrLiItemDueDate = document.createElement('p');
@@ -31,33 +49,35 @@ function displayItemArr(itemArr) {
         }
     })  
 
-    cpltItem(itemArr);
-    deleteItem(itemArr);
-    
+    //i need to reflect these two to the original itemArr too 
+    cpltItemAll(arr);
+    deleteItemAll(arr);  
 }
 
-function cpltItem(itemArr) {
+function cpltItemAll(arr) {
     let cpltIcons = document.querySelectorAll('.cpltIcon');
     cpltIcons.forEach( (cpltIcon) => {
         cpltIcon.addEventListener('click', (e) => {
             let index = e.target.parentElement.getAttribute('data-itemindexnum');
-            itemArr[index].isItemComplete = true;
-            console.log(itemArr);
-            displayItemArr(itemArr);
+            arr[index].isItemComplete = true;
+            displayAllItemFlattedArray(arr);
+
         })
     })
 }
 
-function deleteItem(itemArr) {
+function deleteItemAll(arr) {
     let delIcons = document.querySelectorAll('.delIcon');
     delIcons.forEach( (del) => {
         del.addEventListener('click', (e) => {
             let index = e.target.parentElement.getAttribute('data-itemindexnum');
-            itemArr.splice(index, 1);
+            arr.splice(index, 1);
             removeAllChildren(itemArrUl);
-            displayItemArr(itemArr);
+            displayAllItemFlattedArray(arr);
         })
     })
 }
 
-export { displayItemArr, deleteItem, itemArrUl, cpltItem}
+
+export { allItemsFlatted, allTaskBtn, combineAllItems, displayAllItemFlattedArray }
+

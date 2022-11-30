@@ -40,4 +40,4 @@ function toggleProjs(addItemBtn) {
     })
 }
 
-export { displayProjArr, toggleProjs }  
+export { displayProjArr, toggleProjs, activeProjTitleDiv }  
