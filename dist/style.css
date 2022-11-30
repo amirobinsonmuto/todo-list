@@ -113,3 +113,17 @@ li {
 .active {
     background-color: var(--color-hl-grey);
 }
+
+.strikeThrough > :first-child {
+    text-decoration: line-through;
+    color: red;
+}
+
+.strikeThrough > :first-child {
+    text-decoration: line-through;
+    color: red;
+}
+
+.strikeThrough > :nth-child(3) {
+    display: none;
+}

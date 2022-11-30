@@ -14,16 +14,31 @@ function displayItemArr(itemArr) {
         itemArrLiItemTitle.textContent = el.itemTitle
         let itemArrLiItemDueDate = document.createElement('p');
         itemArrLiItemDueDate.textContent = el.itemDueDate;
+        let cpltIcon = document.createElement('p');
+        cpltIcon.textContent = 'Complete';
+        cpltIcon.classList.add('cpltIcon');
         let delIcon = document.createElement('p');
-        delIcon.textContent = 'delete';
+        delIcon.textContent = 'Delete';
         delIcon.classList.add('delIcon');
-        itemArrLi.append(itemArrLiItemTitle, itemArrLiItemDueDate, delIcon);
+
+        itemArrLi.append(itemArrLiItemTitle, itemArrLiItemDueDate, 
+                         cpltIcon, delIcon);
         itemArrLi.classList.add('itemArrLi');
         itemArrUl.append(itemArrLi);
     })  
 
+    cpltItem();
     deleteItem(itemArr);
     
+}
+
+function cpltItem() {
+    let cpltIcons = document.querySelectorAll('.cpltIcon');
+    cpltIcons.forEach( (cpltIcon) => {
+        cpltIcon.addEventListener('click', (e) => {
+            cpltIcon.parentElement.classList.add('strikeThrough');
+        })
+    })
 }
 
 function deleteItem(itemArr) {
