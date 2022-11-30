@@ -8,7 +8,12 @@ function displayItemArr(itemArr) {
 
     itemArr.forEach( (el) => {
         let itemArrLi = document.createElement('li');
-        itemArrLi.textContent = el.itemTitle;
+        let itemArrLiItemTitle = document.createElement('p');
+        itemArrLiItemTitle.textContent = el.itemTitle
+        let itemArrLiItemDueDate = document.createElement('p');
+        itemArrLiItemDueDate.textContent = el.itemDueDate;
+        itemArrLi.append(itemArrLiItemTitle, itemArrLiItemDueDate);
+        itemArrLi.classList.add('itemArrLi');
         itemArrUl.append(itemArrLi);
     })  
 

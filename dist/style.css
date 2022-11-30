@@ -68,7 +68,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-nav, .sidebar, main {
+nav, .sidebar {
     padding: 20px;
 }
 
@@ -92,11 +92,18 @@ h1 {
 main {
     grid-row: 2 / 14;
     grid-column: 2 / 7;
+    padding: 20px 240px;
 }
 
 li {
     margin: 10px;
 }
+
+.itemArrLi {
+    display: flex;
+    justify-content: space-between;
+    border: 2px red solid;
+} 
 
 .active {
     background-color: var(--color-hl-grey);
