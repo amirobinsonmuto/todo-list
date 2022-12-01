@@ -68,8 +68,6 @@ function addEventListners() {
 
         displayItemArr(projArr[submitItemBtnIndex].itemArr);
         displayAddItemBtn();
-
-        console.log(projArr[submitItemBtnIndex].itemArr);
     })
 
     allTaskBtn.addEventListener('click', ()=>{
