@@ -54,7 +54,6 @@ table {
 
 :root {
     --color-bg-blue: rgba(84,104,171,255);
-    --color-ace-blue: rgba(90,89,96,255);
     --color-bg-grey:  rgba(247,244,249,255);
     --color-txt-grey: rgba(90,89,96,255);
     --color-hl-grey: rgba(227,226,232,255);
@@ -78,11 +77,6 @@ nav {
     background-color: var(--color-bg-blue);
 }
 
-h1 {
-    color: #fff;
-    font-size: 2rem;
-}
-
 .sidebar {
     grid-row: 2 / 14;
     grid-column: 1 / 2; 
@@ -95,8 +89,27 @@ main {
     padding: 20px 240px;
 }
 
-li {
-    margin: 10px;
+.sidebar, main {
+    color: var(--color-txt-grey);
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 100px;
+    font-weight: 600;
+}
+
+li, p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .itemArrLi {
@@ -121,4 +134,20 @@ li {
 
 .hidden {
     display: none;
+}
+
+.btn {
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+/*form */
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    margin-bottom: 10px;
 }

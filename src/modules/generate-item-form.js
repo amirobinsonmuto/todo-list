@@ -61,7 +61,6 @@ function displaySubmitItemBtn(addItemBtn) {
     submitItemBtn.setAttribute('id', 'submitItemBtn');
     submitItemBtn.classList.add('btn');
     submitItemBtn.classList.add('btn-primary');
-    submitItemBtn.classList.add('me-2');
     itemForm.appendChild(submitItemBtn);
     itemFormDiv.appendChild(itemForm);
     let addItemBtnIndex = addItemBtn.getAttribute('data-indexNum');
