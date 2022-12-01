@@ -1,8 +1,8 @@
 import { removeAllChildren } from '../helpers/remove-child';
-import { allTaskBtn } from './combine-display-all-items';
+import { dueDateLis } from './combine-display-all-items';
 import { displayItemArr } from './display-itemArr';
 import { projArr } from './proj-class.js';
-export { allTaskBtn} from './combine-display-all-items';
+export { allItemsLi} from './combine-display-all-items';
 
 const projArrUl = document.getElementById('projarr-ul');
 const activeProjTitleDiv = document.getElementById('active-proj-title-div');
@@ -21,7 +21,8 @@ function displayProjArr() {
 
     //display the last element's proj title in the main
     projArrUl.lastElementChild.classList.add('active');
-    allTaskBtn.classList.remove('active');
+
+    dueDateLis.forEach(f => f.classList.remove('active'));
     activeProjTitleDiv.textContent = 'Project:' + projArr[projArr.length-1].projTitle;
 
     displayItemArr(projArr[projArr.length-1].itemArr);
@@ -34,7 +35,7 @@ function toggleProjs(addItemBtn) {
             let indexNum = li.getAttribute('id');
             addItemBtn.setAttribute('data-indexNum', indexNum);
             projArrLis.forEach(f => f.classList.remove('active'));
-            allTaskBtn.classList.remove('active');
+            dueDateLis.forEach(f => f.classList.remove('active'));
             li.classList.add('active');
             //display the proj title of the active li in the main
             let activeObj = document.querySelector('.active');

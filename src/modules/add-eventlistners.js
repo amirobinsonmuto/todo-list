@@ -11,8 +11,9 @@ import { removeAllChildren } from '../helpers/remove-child';
 import { displayProjArr, toggleProjs } from './display-projArr';
 import { displayItemArr, deleteItem } from './display-itemArr';
 import { differenceInMilliseconds } from 'date-fns';
-import { allItemsFlatted, allTaskBtn, combineAllItems, displayAllItemFlattedArray } 
+import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArray } 
         from './combine-display-all-items';
+import { thisWeekLi, todayLi } from './display-filtered-items-bydate.js';
 
 function addEventListners() {
 
@@ -70,9 +71,21 @@ function addEventListners() {
         displayAddItemBtn();
     })
 
-    allTaskBtn.addEventListener('click', ()=>{
+    allItemsLi.addEventListener('click', ()=>{
         combineAllItems();
-        displayAllItemFlattedArray(allItemsFlatted);
+        displayAllItemFlattedArray(allItemsFlatted, allItemsLi);
+    })
+
+    todayLi.addEventListener('click', ()=>{
+        combineAllItems();
+        displayAllItemFlattedArray(allItemsFlatted, todayLi);
+        //one more function to display only today's items
+    })
+
+    thisWeekLi.addEventListener('click', ()=>{
+        combineAllItems();
+        displayAllItemFlattedArray(allItemsFlatted, thisWeekLi);
+        //one more function to display only this weeks items
     })
 
 }

@@ -4,29 +4,38 @@ import { itemFormDiv } from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
 import { activeProjTitleDiv }  from './display-projArr';
 import { byDate } from '../helpers/sort-bydate';
+import { todayLi,thisWeekLi } from './display-filtered-items-bydate';
 
 let allItemsFlatted = []
-const allTaskBtn = document.getElementById('display-all-items');
+const allItemsLi = document.getElementById('display-all-items');
+let dueDateLis = document.querySelectorAll('.due-date-li');
 
 function combineAllItems(){
-
     let allItems = [];
-
     for (let i=0; i<projArr.length; i++){
         allItems.push(projArr[i].itemArr);
     }
-
     allItemsFlatted = allItems.flat(1);
     allItemsFlatted.sort(byDate);
-    console.log(allItemsFlatted);
 }
 
-function displayAllItemFlattedArray(arr) {
-
+function displayAllItemFlattedArray(arr, obj) {
     removeAllChildren(itemArrUl);
     removeAllChildren(itemFormDiv);
-    activeProjTitleDiv.textContent = "All items";
-    allTaskBtn.classList.add('active');
+
+    dueDateLis.forEach(f => f.classList.remove('active'));
+
+    if (obj == allItemsLi){
+        activeProjTitleDiv.textContent = "All items";
+        allItemsLi.classList.add('active');
+    } else if (obj == todayLi){
+        activeProjTitleDiv.textContent = "Items Due Today";
+        todayLi.classList.add('active');
+    } else {
+        activeProjTitleDiv.textContent = "Items Due This Week";
+        thisWeekLi.classList.add('active');
+    }
+
     let projArrLis = document.querySelectorAll('.projArrLi');
     projArrLis.forEach(f => f.classList.remove('active'));
 
@@ -106,5 +115,5 @@ function deleteItemAll(arr) {
 }
 
 
-export { allItemsFlatted, allTaskBtn, combineAllItems, displayAllItemFlattedArray }
+export { allItemsFlatted, allItemsLi, dueDateLis, combineAllItems, displayAllItemFlattedArray }
 
