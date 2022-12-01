@@ -3,6 +3,7 @@ import { itemArrUl } from './display-itemArr';
 import { itemFormDiv } from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
 import { activeProjTitleDiv }  from './display-projArr';
+import { byDate } from '../helpers/sort-bydate';
 
 let allItemsFlatted = []
 const allTaskBtn = document.getElementById('display-all-items');
@@ -16,6 +17,7 @@ function combineAllItems(){
     }
 
     allItemsFlatted = allItems.flat(1);
+    allItemsFlatted.sort(byDate);
     console.log(allItemsFlatted);
 }
 
