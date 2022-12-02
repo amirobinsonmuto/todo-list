@@ -13,7 +13,8 @@ import { displayItemArr, deleteItem } from './display-itemArr';
 import { differenceInMilliseconds } from 'date-fns';
 import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArray } 
         from './combine-display-all-items';
-import { thisWeekLi, todayLi } from './display-filtered-items-bydate.js';
+import { thisWeekLi, todayLi, displayFilteredItemsByDate } 
+        from './display-filtered-items-bydate.js';
 
 function addEventListners() {
 
@@ -79,7 +80,7 @@ function addEventListners() {
     todayLi.addEventListener('click', ()=>{
         combineAllItems();
         displayAllItemFlattedArray(allItemsFlatted, todayLi);
-        //one more function to display only today's items
+        displayFilteredItemsByDate();
     })
 
     thisWeekLi.addEventListener('click', ()=>{
