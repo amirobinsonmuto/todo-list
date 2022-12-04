@@ -7,7 +7,7 @@ function byDate(a,b){
 function getToday(){
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, '0');
-  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); 
   let yyyy = today.getFullYear();
   today = mm + '/' + dd +'/' + yyyy
   return new Date(today);
@@ -17,7 +17,7 @@ function getDifference(el) {
   let date1 = getToday();
   let dueDate = new Date(el.itemDueDate);
   let dueDatedd = String(dueDate.getDate()).padStart(2, '0');
-  let dueDatemm = String(dueDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let dueDatemm = String(dueDate.getMonth() + 1).padStart(2, '0'); 
   let dueDateyyyy = dueDate.getFullYear();
   dueDate = dueDatemm + '/' + dueDatedd +'/' + dueDateyyyy
 

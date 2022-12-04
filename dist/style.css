@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700&family=Titillium+Web:wght@300;400;600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -114,6 +116,31 @@ li, p {
     margin-top: 10px;
     margin-bottom: 10px;
     cursor: pointer;
+}
+
+.add-btn  {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 20px;
+    transition: all 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}
+
+.add-btn::before{
+    content: url(../node_modules/bootstrap-icons/icons/plus-circle.svg);
+    width: 1rem;
+    height: 1rem;
+}
+
+.add-btn:hover {
+    font-weight: 600;
 }
 
 .itemArrLi {

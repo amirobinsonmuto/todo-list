@@ -2,13 +2,12 @@
 const addItemBtn = document.createElement('button');
 
 function displayAddItemBtn() {
-    addItemBtn.textContent = 'add todo item';
+    addItemBtn.textContent = 'Add todo item';
     const itemFormDiv = document.getElementById('item-form-div');
     itemFormDiv.appendChild(addItemBtn);
     addItemBtn.setAttribute('id', 'addItemBtn');
+    addItemBtn.classList.add('add-btn');
     addItemBtn.classList.add('btn');
-    addItemBtn.classList.add('btn-primary');
-    addItemBtn.classList.add('mt-3');
 }
 
 export { addItemBtn, displayAddItemBtn }

@@ -1,6 +1,5 @@
 import { allItemsFlatted, displayAllItemFlattedArray } 
         from './combine-display-all-items';
-import { itemArrUl } from './display-itemArr';
 import { getDifference } from '../helpers/sort-bydate';
 
 const todayLi = document.getElementById('today-li');

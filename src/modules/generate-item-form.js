@@ -1,7 +1,7 @@
 
 //function to generate an from to gater item info
 const itemFormDiv = document.getElementById('item-form-div');
-const itemForm = document.createElement('div');
+const itemForm = document.createElement('form');
 itemForm.setAttribute('id', 'itemForm')
 const submitItemBtn = document.createElement('button');
 const cancelItemBtn = document.createElement('button');
@@ -26,7 +26,9 @@ function generateItemForm() {
     //title
     titleLabel.textContent = 'Title';
     titleLabel.setAttribute('for', 'title');
+    titleLabel.setAttribute('class', 'form-label');
     titleInput.setAttribute('type', 'text');
+    titleInput.required = true;
     titleInput.setAttribute('class', 'form-control');
     titleInput.setAttribute('id', 'itemTitle');
     titleDiv.append(titleLabel, titleInput);
@@ -35,6 +37,7 @@ function generateItemForm() {
     //description
     descrLabel.textContent = 'descr';
     descrLabel.setAttribute('for', 'descr');
+    descrLabel.setAttribute('class', 'form-label');
     descrInput.setAttribute('type', 'text');
     descrInput.setAttribute('class', 'form-control');
     descrInput.setAttribute('id', 'itemDescr');
@@ -44,9 +47,11 @@ function generateItemForm() {
     //dueDate
     dueDateLabel.textContent = 'dueDate';
     dueDateLabel.setAttribute('for', 'dueDate');
+    dueDateLabel.setAttribute('class', 'form-label');
     dueDateInput.setAttribute('type', 'date');
     dueDateInput.setAttribute('class', 'form-control');
     dueDateInput.setAttribute('id', 'itemDueDate');
+    dueDateInput.required = true;
     dueDateDiv.append(dueDateLabel, dueDateInput);
     itemForm.appendChild(dueDateDiv);
     
@@ -59,6 +64,7 @@ function generateItemForm() {
 function displaySubmitItemBtn(addItemBtn) {
     submitItemBtn.textContent = 'submit';
     submitItemBtn.setAttribute('id', 'submitItemBtn');
+    submitItemBtn.setAttribute('type', 'submit');
     submitItemBtn.classList.add('btn');
     submitItemBtn.classList.add('btn-primary');
     itemForm.appendChild(submitItemBtn);

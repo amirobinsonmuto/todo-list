@@ -1,7 +1,7 @@
 
 //function to generate an from to gater project info
 const projFormDiv = document.getElementById('proj-form-div');
-const projForm = document.createElement('div');
+const projForm = document.createElement('form');
 projForm.setAttribute('id', 'projForm')
 const submitProjBtn = document.createElement('button');
 const cancelProjBtn = document.createElement('button');
@@ -22,10 +22,12 @@ function generateProjForm() {
     //title
     projTitleLabel.textContent = 'proj Title';
     projTitleLabel.setAttribute('for', 'projTitle');
-
+    projTitleLabel.classList.add('form-label');
     projTitleInput.setAttribute('type', 'text');
     projTitleInput.setAttribute('class', 'form-control');
     projTitleInput.setAttribute('id', 'projTitle');
+    projTitleInput.setAttribute('name', 'projTitle');
+    projTitleInput.required = true;
 
     projTitleDiv.append(projTitleLabel, projTitleInput);
     projForm.appendChild(projTitleDiv);
@@ -33,7 +35,7 @@ function generateProjForm() {
     //description
     projDescrLabel.textContent = 'proj Descr';
     projDescrLabel.setAttribute('for', 'projDescr');
-
+    projDescrLabel.classList.add('form-label');
     projDescrInput.setAttribute('type', 'text');
     projDescrInput.setAttribute('class', 'form-control');
     projDescrInput.setAttribute('id', 'projDescr');
@@ -47,10 +49,12 @@ function generateProjForm() {
     
 //submit button 
 function displaySubmitProjBtn() {
-    submitProjBtn.textContent = 'submit';
+    submitProjBtn.setAttribute('value', 'submit');
+    submitProjBtn.textContent = 'submit'    ;
     submitProjBtn.setAttribute('id', 'submitProjBtn');
     submitProjBtn.classList.add('btn');
     submitProjBtn.classList.add('btn-primary');
+    submitProjBtn.setAttribute('type', 'submit');
     projForm.appendChild(submitProjBtn);
     projFormDiv.appendChild(projForm);
 }
@@ -60,6 +64,7 @@ function displayCancelProjBtn() {
     cancelProjBtn.setAttribute('id', 'cancelProjBtn');
     cancelProjBtn.classList.add('btn');
     cancelProjBtn.classList.add('btn-secondary');
+    cancelProjBtn.setAttribute('type', 'button');
     projForm.appendChild(cancelProjBtn);
     projFormDiv.appendChild(projForm);
 }

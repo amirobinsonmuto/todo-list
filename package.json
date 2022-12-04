@@ -23,6 +23,7 @@
     "webpack-cli": "^5.0.0"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.10.2",
     "date-fns": "^2.29.3"
   }
 }
