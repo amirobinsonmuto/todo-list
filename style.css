@@ -102,6 +102,8 @@ h1 {
 
 h2 {
     font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 h3 {
@@ -111,13 +113,25 @@ h3 {
     font-weight: 600;
 }
 
-li, p {
+li, p, button {
     font-size: 1.2rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding:10px;
+    margin: 5px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
+/*form */
+
+label, textarea {
+    margin-bottom: 8px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+/* itemArr display */
 .add-btn  {
     background: none;
     color: inherit;
@@ -135,19 +149,38 @@ li, p {
 
 .add-btn::before{
     content: url(../node_modules/bootstrap-icons/icons/plus-circle.svg);
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 .add-btn:hover {
     font-weight: 600;
 }
 
+.cpltIcon {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+.filter-red {
+    filter: invert(21%) sepia(88%) saturate(5957%) hue-rotate(357deg) brightness(98%) contrast(126%);
+}
+
+.filter-red:hover {
+    filter: invert(7%) sepia(87%) saturate(7260%) hue-rotate(23deg) brightness(96%) contrast(104%);
+}
+
 .itemArrLi {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    border: 1px var(--color-hl-grey) solid;
 } 
+
+.right-div, .left-div {
+    display: flex;
+}
 
 .itemArrLi:hover {
     background-color: var(--color-hl-grey);
@@ -163,22 +196,17 @@ li, p {
     color: red;
 }
 
-.hidden {
-    display: none;
-}
+
+/* btn  */
 
 .btn {
     margin-top:20px;
     margin-bottom: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
+    font-size: 1.2rem;
 }
 
-/*form */
 
-label {
-    margin-bottom: 8px;
-}
 
-input {
-    margin-bottom: 10px;
-}
+
+
