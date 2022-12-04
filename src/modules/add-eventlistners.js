@@ -15,11 +15,14 @@ import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArra
         from './combine-display-all-items';
 import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatted } 
         from './display-filtered-items-bydate.js';
+import { display } from '../helpers/display';
 
 function addEventListners() {
 
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    hamburgerMenu.addEventListener('click', display);
+
     const addProjBtn = document.getElementById('add-proj-btn');
-    
     addProjBtn.addEventListener('click', ()=>{
         //generate a proj form
         generateProjForm();

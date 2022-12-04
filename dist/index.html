@@ -10,42 +10,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <nav>
-            <h1>Logo</h1>
-        </nav>
-        <div class="sidebar"> 
-            <div>
-                <ul>
-                    <li class="due-date-li" id="display-all-items">All To-do Items</li>
-                    <li class="due-date-li" id="today-li">Today</li>
-                    <li class="due-date-li" id="this-week-li">This week</li>
-                </ul>
-            </div>       
-            <div>
-                <h3>Projects</h3>
-                <ul id ="projarr-ul"></ul>
-            </div> 
-            <button id="add-proj-btn" class="add-btn btn">
-                <!--<i class="bi bi-plus-circle"></i> -->
-                    Add Project
-            </button>
-            <div id="proj-form-div"></div>
+    <header>
+        <h1>Logo</h1>
+        <img src="../node_modules/bootstrap-icons/icons/list.svg" 
+             alt="hamburger menu icon"
+             class="filter-white hamburger-icon hidden"
+             id="hamburger-menu">
+    </header>
+    <nav class="sidebar" id="sidebar"> 
+        <div>
+            <ul>
+                <li class="due-date-li" id="display-all-items">All To-do Items</li>
+                <li class="due-date-li" id="today-li">Today</li>
+                <li class="due-date-li" id="this-week-li">This week</li>
+            </ul>
+        </div>       
+        <div>
+            <h3>Projects</h3>
+            <ul id ="projarr-ul"></ul>
+        </div> 
+        <button id="add-proj-btn" class="add-btn btn">
+                Add Project
+        </button>
+        <div id="proj-form-div"></div>
 
-            
+        
+    </nav>
+    <main>
+        <div>
+            <h2 id="active-proj-title-div"></h2>
         </div>
-        <main>
-            <div>
-                <h2 id="active-proj-title-div"></h2>
-            </div>
-            <div>
-                <ul id ="itemarr-ul"></ul>
-            </div>
-            <div id="item-form-div">
+        <div>
+            <ul id ="itemarr-ul"></ul>
+        </div>
+        <div id="item-form-div">
 
-            </div>
+        </div>
 
-            
-        </main>
+        
+    </main>
 
 
     
