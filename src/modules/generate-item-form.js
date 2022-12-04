@@ -14,7 +14,7 @@ const titleInput = document.createElement('input');
 const descrDiv = document.createElement('div');
 descrDiv.classList.add('form-group');
 const descrLabel = document.createElement('label');
-const descrInput = document.createElement('input');
+const descrInput = document.createElement('textarea');
 //duedate
 const dueDateDiv = document.createElement('div');
 dueDateDiv.classList.add('form-group');
@@ -24,7 +24,7 @@ const dueDateInput = document.createElement('input');
 function generateItemForm() {
 
     //title
-    titleLabel.textContent = 'Title';
+    titleLabel.textContent = 'Item Title';
     titleLabel.setAttribute('for', 'title');
     titleLabel.setAttribute('class', 'form-label');
     titleInput.setAttribute('type', 'text');
@@ -35,17 +35,18 @@ function generateItemForm() {
     itemForm.appendChild(titleDiv);
 
     //description
-    descrLabel.textContent = 'descr';
+    descrLabel.textContent = 'Description';
     descrLabel.setAttribute('for', 'descr');
     descrLabel.setAttribute('class', 'form-label');
-    descrInput.setAttribute('type', 'text');
+    descrLabel.setAttribute('rows', '4');
+    descrLabel.setAttribute('cols', '20');
     descrInput.setAttribute('class', 'form-control');
     descrInput.setAttribute('id', 'itemDescr');
     descrDiv.append(descrLabel, descrInput);
     itemForm.appendChild(descrDiv);
 
     //dueDate
-    dueDateLabel.textContent = 'dueDate';
+    dueDateLabel.textContent = 'Due Date';
     dueDateLabel.setAttribute('for', 'dueDate');
     dueDateLabel.setAttribute('class', 'form-label');
     dueDateInput.setAttribute('type', 'date');

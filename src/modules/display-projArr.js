@@ -2,7 +2,8 @@ import { removeAllChildren } from '../helpers/remove-child';
 import { dueDateLis } from './combine-display-all-items';
 import { displayItemArr } from './display-itemArr';
 import { projArr } from './proj-class.js';
-export { allItemsLi} from './combine-display-all-items';
+import { allItemsLi} from './combine-display-all-items';
+import { displayAddItemBtn } from './generate-addItem-btn';
 
 const projArrUl = document.getElementById('projarr-ul');
 const activeProjTitleDiv = document.getElementById('active-proj-title-div');
@@ -41,6 +42,7 @@ function toggleProjs(addItemBtn) {
             let activeObj = document.querySelector('.active');
             activeProjTitleDiv.textContent = 'Project:' + activeObj.textContent;
             displayItemArr(projArr[indexNum].itemArr);
+            displayAddItemBtn(); 
         })
     })
 }

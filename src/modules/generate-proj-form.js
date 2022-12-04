@@ -14,13 +14,13 @@ const projTitleInput = document.createElement('input');
 const projDescrDiv = document.createElement('div');
 projDescrDiv.classList.add('form-group');
 const projDescrLabel = document.createElement('label');
-const projDescrInput = document.createElement('input');
+const projDescrInput = document.createElement('textarea');
 
 
 function generateProjForm() {
 
     //title
-    projTitleLabel.textContent = 'proj Title';
+    projTitleLabel.textContent = 'Project Title';
     projTitleLabel.setAttribute('for', 'projTitle');
     projTitleLabel.classList.add('form-label');
     projTitleInput.setAttribute('type', 'text');
@@ -33,10 +33,11 @@ function generateProjForm() {
     projForm.appendChild(projTitleDiv);
 
     //description
-    projDescrLabel.textContent = 'proj Descr';
+    projDescrLabel.textContent = 'Project Description';
     projDescrLabel.setAttribute('for', 'projDescr');
     projDescrLabel.classList.add('form-label');
-    projDescrInput.setAttribute('type', 'text');
+    projDescrInput.setAttribute('rows', '4');
+    projDescrInput.setAttribute('cols', '20');
     projDescrInput.setAttribute('class', 'form-control');
     projDescrInput.setAttribute('id', 'projDescr');
 
@@ -50,7 +51,7 @@ function generateProjForm() {
 //submit button 
 function displaySubmitProjBtn() {
     submitProjBtn.setAttribute('value', 'submit');
-    submitProjBtn.textContent = 'submit'    ;
+    submitProjBtn.textContent = 'Submit'    ;
     submitProjBtn.setAttribute('id', 'submitProjBtn');
     submitProjBtn.classList.add('btn');
     submitProjBtn.classList.add('btn-primary');
@@ -60,7 +61,7 @@ function displaySubmitProjBtn() {
 }
 
 function displayCancelProjBtn() {
-    cancelProjBtn.textContent = 'cancel';
+    cancelProjBtn.textContent = 'Cancel';
     cancelProjBtn.setAttribute('id', 'cancelProjBtn');
     cancelProjBtn.classList.add('btn');
     cancelProjBtn.classList.add('btn-secondary');
@@ -71,5 +72,5 @@ function displayCancelProjBtn() {
 
 
 
-export { projFormDiv, projForm,  submitProjBtn, cancelProjBtn,
+export { projFormDiv, projForm,  submitProjBtn, cancelProjBtn, projTitleInput,
          generateProjForm, displaySubmitProjBtn, displayCancelProjBtn }

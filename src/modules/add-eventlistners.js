@@ -1,5 +1,5 @@
 
-import { projFormDiv, projForm,  submitProjBtn, cancelProjBtn,
+import { projFormDiv, projForm,  submitProjBtn, cancelProjBtn, projTitleInput,
         generateProjForm, displaySubmitProjBtn, displayCancelProjBtn } 
         from './generate-proj-form.js';
 import { projArr, createProjObj } from './proj-class.js';
@@ -30,15 +30,16 @@ function addEventListners() {
 
     submitProjBtn.addEventListener('click', ()=>{ 
         //create a proj obj and push it to projArr 
-        //and assign in the index number to submitProjBtn           
+        //and assign in the index number to submitProjBtn 
+        
         createProjObj(addItemBtn); 
         //display an add item button
-        displayAddItemBtn(); 
         projFormDiv.removeChild(projForm);
 
         displayProjArr(projArr);
         toggleProjs(addItemBtn);
-        console.log(projArr);
+        displayAddItemBtn(); 
+
     })
 
     cancelProjBtn.addEventListener('click', ()=>{
@@ -70,6 +71,7 @@ function addEventListners() {
 
         displayItemArr(projArr[submitItemBtnIndex].itemArr);
         displayAddItemBtn();
+        
     })
 
     allItemsLi.addEventListener('click', ()=>{
@@ -88,7 +90,6 @@ function addEventListners() {
         displayFilteredItemsByDate(5);
         displayAllItemFlattedArray(filteredAllItemsFlatted, thisWeekLi);
     })
-
 }
 
 
