@@ -17,8 +17,10 @@ const projDescrLabel = document.createElement('label');
 const projDescrInput = document.createElement('textarea');
 
 
-function generateProjForm() {
+function generateProjForm(addProjBtn) {
 
+    addProjBtn.classList.add('hidden');
+    
     //title
     projTitleLabel.textContent = 'Project Title';
     projTitleLabel.setAttribute('for', 'projTitle');

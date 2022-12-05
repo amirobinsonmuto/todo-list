@@ -17,15 +17,15 @@ import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatte
         from './display-filtered-items-bydate.js';
 import { display } from '../helpers/display';
 
+const addProjBtn = document.getElementById('add-proj-btn');
 function addEventListners() {
 
     const hamburgerMenu = document.getElementById('hamburger-menu');
     hamburgerMenu.addEventListener('click', display);
 
-    const addProjBtn = document.getElementById('add-proj-btn');
     addProjBtn.addEventListener('click', ()=>{
         //generate a proj form
-        generateProjForm();
+        generateProjForm(addProjBtn);
         //display a submit proj button
         displaySubmitProjBtn();
         displayCancelProjBtn();
@@ -39,7 +39,7 @@ function addEventListners() {
         //display an add item button
         projFormDiv.removeChild(projForm);
 
-        displayProjArr();
+        displayProjArr(addProjBtn);
         toggleProjs(addItemBtn);
         displayAddItemBtn(); 
 
@@ -96,7 +96,7 @@ function addEventListners() {
 }
 
 
-export { addEventListners }
+export { addProjBtn, addEventListners }
 
 
 

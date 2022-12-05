@@ -180,6 +180,10 @@ main form {
     width: 50%;
 }
 
+form {
+    margin-top: 20px;
+}
+
 /* itemArr display */
 .add-btn  {
     background: none;
@@ -249,6 +253,9 @@ main form {
     color: red;
 }
 
+.hidden {
+    display: none;
+}
 
 /* btn  */
 

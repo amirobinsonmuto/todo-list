@@ -8,8 +8,9 @@ import { displayAddItemBtn } from './generate-addItem-btn';
 const projArrUl = document.getElementById('projarr-ul');
 const activeProjTitleDiv = document.getElementById('active-proj-title-div');
     
-function displayProjArr() {
+function displayProjArr(addProjBtn) {
 
+    addProjBtn.classList.remove('hidden');
     removeAllChildren(projArrUl);
 
     projArr.forEach( (el) => {
