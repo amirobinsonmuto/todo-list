@@ -47,12 +47,12 @@ function addEventListners() {
 
     cancelProjBtn.addEventListener('click', ()=>{
         projFormDiv.removeChild(projForm);
-
+        displayProjArr(addProjBtn);
     })
 
     addItemBtn.addEventListener('click', ()=>{
         //generate a todo item form
-        generateItemForm(); 
+        generateItemForm(addItemBtn); 
         //display a submit item button and transfer the index number attached 
         //on submitProjBtn to addItemBtn
         displaySubmitItemBtn(addItemBtn); 

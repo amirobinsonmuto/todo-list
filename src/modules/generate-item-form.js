@@ -21,7 +21,9 @@ dueDateDiv.classList.add('form-group');
 const dueDateLabel = document.createElement('label');
 const dueDateInput = document.createElement('input');
 
-function generateItemForm() {
+function generateItemForm(addItemBtn) {
+
+    addItemBtn.classList.add('hidden');
 
     //title
     titleLabel.textContent = 'Item Title';

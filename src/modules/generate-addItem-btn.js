@@ -8,6 +8,7 @@ function displayAddItemBtn() {
     addItemBtn.setAttribute('id', 'addItemBtn');
     addItemBtn.classList.add('add-btn');
     addItemBtn.classList.add('btn');
+    addItemBtn.classList.remove('hidden');
 }
 
 export { addItemBtn, displayAddItemBtn }
