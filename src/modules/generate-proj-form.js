@@ -73,6 +73,5 @@ function displayCancelProjBtn() {
 }
 
 
-
 export { projFormDiv, projForm,  submitProjBtn, cancelProjBtn, projTitleInput,
          generateProjForm, displaySubmitProjBtn, displayCancelProjBtn }

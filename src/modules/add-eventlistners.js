@@ -16,6 +16,7 @@ import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArra
 import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatted } 
         from './display-filtered-items-bydate.js';
 import { display } from '../helpers/display';
+import { disableToggle, activateToggle } from '../helpers/disable-toggle';
 
 const addProjBtn = document.getElementById('add-proj-btn');
 function addEventListners() {
@@ -24,23 +25,18 @@ function addEventListners() {
     hamburgerMenu.addEventListener('click', display);
 
     addProjBtn.addEventListener('click', ()=>{
-        //generate a proj form
         generateProjForm(addProjBtn);
-        //display a submit proj button
         displaySubmitProjBtn();
         displayCancelProjBtn();
+        disableToggle('.projArrLi');
     })
 
     submitProjBtn.addEventListener('click', ()=>{ 
-        //create a proj obj and push it to projArr 
-        //and assign in the index number to submitProjBtn 
-        
         createProjObj(addItemBtn); 
-        //display an add item button
         projFormDiv.removeChild(projForm);
-
         displayProjArr(addProjBtn);
         toggleProjs(addItemBtn);
+        activateToggle('.projArrLi');
         displayAddItemBtn(); 
 
     })
@@ -48,20 +44,15 @@ function addEventListners() {
     cancelProjBtn.addEventListener('click', ()=>{
         projFormDiv.removeChild(projForm);
         displayProjArr(addProjBtn);
+        toggleProjs(addItemBtn);
+        activateToggle('.projArrLi');
     })
 
     addItemBtn.addEventListener('click', ()=>{
-        //generate a todo item form
         generateItemForm(addItemBtn); 
-        //display a submit item button and transfer the index number attached 
-        //on submitProjBtn to addItemBtn
         displaySubmitItemBtn(addItemBtn); 
         displayCancelItemBtn();
-    })
-
-    cancelItemBtn.addEventListener('click', ()=>{
-        removeAllChildren(itemFormDiv);
-        displayAddItemBtn(); 
+        disableToggle('.projArrLi');
     })
 
     submitItemBtn.addEventListener('click', ()=>{
@@ -70,11 +61,15 @@ function addEventListners() {
         //call a method using the index number
         projArr[submitItemBtnIndex].createItemObj();
         removeAllChildren(itemFormDiv);
-        //display an add item button again
-
         displayItemArr(projArr[submitItemBtnIndex].itemArr);
         displayAddItemBtn();
-        
+        activateToggle('.projArrLi');
+    })
+
+    cancelItemBtn.addEventListener('click', ()=>{
+        removeAllChildren(itemFormDiv);
+        displayAddItemBtn(); 
+        activateToggle('.projArrLi');
     })
 
     allItemsLi.addEventListener('click', ()=>{
@@ -94,7 +89,6 @@ function addEventListners() {
         displayAllItemFlattedArray(filteredAllItemsFlatted, thisWeekLi);
     })
 }
-
 
 export { addProjBtn, addEventListners }
 
