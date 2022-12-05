@@ -24,7 +24,7 @@ function displayProjArr() {
     projArrUl.lastElementChild.classList.add('active');
 
     dueDateLis.forEach(f => f.classList.remove('active'));
-    activeProjTitleDiv.textContent = 'Project:' + projArr[projArr.length-1].projTitle;
+    activeProjTitleDiv.textContent = 'Project: ' + projArr[projArr.length-1].projTitle;
 
     displayItemArr(projArr[projArr.length-1].itemArr);
 }
@@ -40,7 +40,7 @@ function toggleProjs(addItemBtn) {
             li.classList.add('active');
             //display the proj title of the active li in the main
             let activeObj = document.querySelector('.active');
-            activeProjTitleDiv.textContent = 'Project:' + activeObj.textContent;
+            activeProjTitleDiv.textContent = 'Project: ' + activeObj.textContent;
             displayItemArr(projArr[indexNum].itemArr);
             displayAddItemBtn(); 
         })

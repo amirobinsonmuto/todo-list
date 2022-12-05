@@ -39,7 +39,7 @@ function addEventListners() {
         //display an add item button
         projFormDiv.removeChild(projForm);
 
-        displayProjArr(projArr);
+        displayProjArr();
         toggleProjs(addItemBtn);
         displayAddItemBtn(); 
 
