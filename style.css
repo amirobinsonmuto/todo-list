@@ -257,6 +257,10 @@ form {
     display: none;
 }
 
+.disable-click {
+    pointer-events: none;
+}
+
 /* btn  */
 
 .btn {
