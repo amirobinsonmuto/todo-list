@@ -1,16 +1,15 @@
 
-import { projFormDiv, projForm,  submitProjBtn, cancelProjBtn, projTitleInput,
+import { projFormDiv, projForm,  submitProjBtn, cancelProjBtn,
         generateProjForm, displaySubmitProjBtn, displayCancelProjBtn } 
         from './generate-proj-form.js';
 import { projArr, createProjObj } from './proj-class.js';
 import { addItemBtn, displayAddItemBtn } from './generate-addItem-btn.js';
-import { itemFormDiv, itemForm,  submitItemBtn, cancelItemBtn,
+import { itemFormDiv, submitItemBtn, cancelItemBtn,
         generateItemForm, displaySubmitItemBtn, displayCancelItemBtn } 
         from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
 import { displayProjArr, toggleProjs } from './display-projArr';
-import { displayItemArr, deleteItem } from './display-itemArr';
-import { differenceInMilliseconds } from 'date-fns';
+import { displayItemArr } from './display-itemArr';
 import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArray } 
         from './combine-display-all-items';
 import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatted } 

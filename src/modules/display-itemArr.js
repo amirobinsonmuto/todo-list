@@ -63,7 +63,6 @@ function cpltItem(itemArr) {
     })
 }
 
-
 function deleteItem(itemArr) {
     let delIcons = document.querySelectorAll('.delIcon');
     delIcons.forEach( (del) => {

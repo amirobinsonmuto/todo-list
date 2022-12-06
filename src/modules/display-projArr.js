@@ -2,12 +2,13 @@ import { removeAllChildren } from '../helpers/remove-child';
 import { dueDateLis } from './combine-display-all-items';
 import { displayItemArr } from './display-itemArr';
 import { projArr } from './proj-class.js';
-import { allItemsLi} from './combine-display-all-items';
 import { displayAddItemBtn } from './generate-addItem-btn';
+import { addProjBtn } from './add-eventlistners';
+import { addItemBtn } from './generate-addItem-btn'
 
 const projArrUl = document.getElementById('projarr-ul');
 const activeProjTitleDiv = document.getElementById('active-proj-title-div');
-    
+
 function displayProjArr(addProjBtn) {
 
     addProjBtn.classList.remove('hidden');
@@ -15,7 +16,16 @@ function displayProjArr(addProjBtn) {
 
     projArr.forEach( (el) => {
         let projArrLi = document.createElement('li');
-        projArrLi.textContent = el.projTitle;
+
+        let projArrTitle = document.createElement('p');
+        projArrTitle.textContent = el.projTitle;
+
+        let delProjIcon = document.createElement("img")
+        delProjIcon.setAttribute('src', "../node_modules/bootstrap-icons/icons/trash.svg");
+        delProjIcon.classList.add('filter-red')
+        delProjIcon.classList.add('delProjIcon');
+
+        projArrLi.append(projArrTitle, delProjIcon)
         projArrUl.append(projArrLi);
         projArrLi.setAttribute('id', projArr.indexOf(el));
         projArrLi.classList.add('projArrLi');
@@ -28,6 +38,8 @@ function displayProjArr(addProjBtn) {
     activeProjTitleDiv.textContent = 'Project: ' + projArr[projArr.length-1].projTitle;
 
     displayItemArr(projArr[projArr.length-1].itemArr);
+
+    deleteProj(projArr);
 }
 
 function toggleProjs(addItemBtn) {
@@ -48,4 +60,17 @@ function toggleProjs(addItemBtn) {
     })
 }
 
-export { displayProjArr, toggleProjs, activeProjTitleDiv }  
+function deleteProj(projArr) {
+    let delProjIcons = document.querySelectorAll('.delProjIcon');
+    delProjIcons.forEach( (del) => {
+        del.addEventListener('click', (e) => {
+            let index = e.target.parentElement.getAttribute('id');
+            projArr.splice(index, 1);
+            removeAllChildren(projArrUl);
+            displayProjArr(addProjBtn);
+            toggleProjs(addItemBtn);
+        })
+    })
+}
+
+export { displayProjArr, toggleProjs, activeProjTitleDiv, deleteProj }  
