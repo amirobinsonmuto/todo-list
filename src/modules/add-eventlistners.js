@@ -11,7 +11,7 @@ import { removeAllChildren } from '../helpers/remove-child';
 import { displayProjArr, toggleProjs } from './display-projArr';
 import { displayItemArr } from './display-itemArr';
 import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArray
-        , deleteItemAll } 
+        , deleteItemAll, cpltItemAll } 
         from './combine-display-all-items';
 import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatted } 
         from './display-filtered-items-bydate.js';
@@ -75,6 +75,7 @@ function addEventListners() {
     allItemsLi.addEventListener('click', ()=>{
         combineAllItems();
         displayAllItemFlattedArray(allItemsFlatted, allItemsLi);
+        cpltItemAll(allItemsFlatted, allItemsLi);
         deleteItemAll(allItemsFlatted, allItemsLi);  
     })
 
@@ -82,6 +83,7 @@ function addEventListners() {
         combineAllItems();
         displayFilteredItemsByDate(-1);
         displayAllItemFlattedArray(filteredAllItemsFlatted, todayLi);
+        cpltItemAll(filteredAllItemsFlatted, todayLi);
         deleteItemAll(filteredAllItemsFlatted, todayLi)
     })
 
@@ -89,6 +91,7 @@ function addEventListners() {
         combineAllItems();
         displayFilteredItemsByDate(5);
         displayAllItemFlattedArray(filteredAllItemsFlatted, thisWeekLi);
+        cpltItemAll(filteredAllItemsFlatted, thisWeekLi);
         deleteItemAll(filteredAllItemsFlatted, thisWeekLi);
     })
 }
