@@ -10,7 +10,8 @@ import { itemFormDiv, submitItemBtn, cancelItemBtn,
 import { removeAllChildren } from '../helpers/remove-child';
 import { displayProjArr, toggleProjs } from './display-projArr';
 import { displayItemArr } from './display-itemArr';
-import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArray } 
+import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArray
+        , deleteItemAll } 
         from './combine-display-all-items';
 import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatted } 
         from './display-filtered-items-bydate.js';
@@ -74,18 +75,21 @@ function addEventListners() {
     allItemsLi.addEventListener('click', ()=>{
         combineAllItems();
         displayAllItemFlattedArray(allItemsFlatted, allItemsLi);
+        deleteItemAll(allItemsFlatted, allItemsLi);  
     })
 
     todayLi.addEventListener('click', ()=>{
         combineAllItems();
         displayFilteredItemsByDate(-1);
         displayAllItemFlattedArray(filteredAllItemsFlatted, todayLi);
+        deleteItemAll(filteredAllItemsFlatted, todayLi)
     })
 
     thisWeekLi.addEventListener('click', ()=>{
         combineAllItems();
         displayFilteredItemsByDate(5);
         displayAllItemFlattedArray(filteredAllItemsFlatted, thisWeekLi);
+        deleteItemAll(filteredAllItemsFlatted, thisWeekLi);
     })
 }
 

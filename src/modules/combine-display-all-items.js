@@ -43,38 +43,55 @@ function displayAllItemFlattedArray(arr, obj) {
         let itemArrLi = document.createElement('li');
         let itemIndexNum = arr.indexOf(el);
         itemArrLi.setAttribute('data-itemindexnum', itemIndexNum);
-        let itemArrLiItemTitle = document.createElement('p');
-        itemArrLiItemTitle.textContent = el.itemTitle
-        let projTitle = document.createElement('p');
-        projTitle.textContent = 'Project: ' + el.projTitle
-        let itemArrLiItemDueDate = document.createElement('p');
-        itemArrLiItemDueDate.textContent = el.itemDueDate;
-        let cpltIcon = document.createElement('p');
-        cpltIcon.textContent = 'Complete';
-        cpltIcon.classList.add('cpltIcon');
-        let delIcon = document.createElement('p');
-        delIcon.textContent = 'Delete';
-        delIcon.classList.add('delIcon');
-        itemArrLi.append(itemArrLiItemTitle, projTitle, itemArrLiItemDueDate, 
-                         cpltIcon, delIcon);
+
+        let leftDiv = document.createElement('div');
+        leftDiv.classList.add('left-div');
+
+            let cpltIcon = document.createElement('input');
+            cpltIcon.classList.add('cpltIcon');
+            cpltIcon.setAttribute('type', 'checkbox');
+
+            let itemArrLiItemTitle = document.createElement('p');
+            itemArrLiItemTitle.textContent = el.itemTitle
+
+            let projTitle = document.createElement('p');
+            projTitle.textContent = 'Project: ' + el.projTitle
+
+        leftDiv.append(cpltIcon, itemArrLiItemTitle, projTitle)
+
+        let rightDiv = document.createElement('div');
+        rightDiv.classList.add('right-div');
+
+            let itemArrLiItemDueDate = document.createElement('p');
+            itemArrLiItemDueDate.textContent = 'Due: ' + el.itemDueDate;
+
+            let delProjIcon = document.createElement("img")
+            delProjIcon.setAttribute('src', "../node_modules/bootstrap-icons/icons/trash.svg");
+            delProjIcon.classList.add('filter-red')
+            delProjIcon.classList.add('delProjIcon');
+
+        rightDiv.append(itemArrLiItemDueDate, delProjIcon);
+        
+        itemArrLi.append(leftDiv, rightDiv);
         itemArrLi.classList.add('itemArrLi');
         itemArrUl.append(itemArrLi);
 
         if (el.isItemComplete === true) {
             itemArrLiItemTitle.classList.add('strike-through');
-            cpltIcon.classList.add('hidden');
+            cpltIcon.checked = true;
+
         }
     })  
 
     cpltItemAll(arr);
-    deleteItemAll(arr);  
+    // deleteItemAll(arr);  
 }
 
 function cpltItemAll(arr) {
     let cpltIcons = document.querySelectorAll('.cpltIcon');
     cpltIcons.forEach( (cpltIcon) => {
         cpltIcon.addEventListener('click', (e) => {
-            let index = e.target.parentElement.getAttribute('data-itemindexnum');
+            let index = e.target.parentElement.parentElement.getAttribute('data-itemindexnum');
             arr[index].isItemComplete = true;
             displayAllItemFlattedArray(arr);
             
@@ -91,11 +108,11 @@ function cpltItemAll(arr) {
     })
 }
 
-function deleteItemAll(arr) {
-    let delIcons = document.querySelectorAll('.delIcon');
-    delIcons.forEach( (del) => {
+function deleteItemAll(arr, obj) {
+    let delProjIcons = document.querySelectorAll('.delProjIcon');
+    delProjIcons.forEach( (del) => {
         del.addEventListener('click', (e) => {
-            let index = e.target.parentElement.getAttribute('data-itemindexnum');
+            let index = e.target.parentElement.parentElement.getAttribute('data-itemindexnum');
             
             //find the index number of the proj object that matches the proj title 
             const whichProject = projArr.find( el => el.projTitle == arr[index].projTitle );
@@ -103,17 +120,17 @@ function deleteItemAll(arr) {
 
             //find the index number of the item object in the respective proj obj
             const findItemObj = projArr[projArrIndex].itemArr.find(el => el == arr[index]);
-            let finalindex = projArr[projArrIndex].itemArr.indexOf(findItemObj);
-            projArr[projArrIndex].itemArr.splice(finalindex, 1);
+            let finalIndex = projArr[projArrIndex].itemArr.indexOf(findItemObj);
+            projArr[projArrIndex].itemArr.splice(finalIndex, 1);
 
             arr.splice(index, 1);
             removeAllChildren(itemArrUl);
-            displayAllItemFlattedArray(arr);
-
+            displayAllItemFlattedArray(arr, obj);
         })
     })
 }
 
 
-export { allItemsFlatted, allItemsLi, dueDateLis, combineAllItems, displayAllItemFlattedArray }
+export { allItemsFlatted, allItemsLi, dueDateLis, combineAllItems, 
+    displayAllItemFlattedArray, deleteItemAll }
 
