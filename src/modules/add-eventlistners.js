@@ -31,14 +31,13 @@ function addEventListners() {
         disableToggle('.projArrLi');
     })
 
-    submitProjBtn.addEventListener('click', ()=>{ 
+    submitProjBtn.addEventListener('submit', ()=>{ 
         createProjObj(addItemBtn); 
         projFormDiv.removeChild(projForm);
         displayProjArr(addProjBtn);
         toggleProjs(addItemBtn);
         activateToggle('.projArrLi');
         displayAddItemBtn(); 
-
     })
 
     cancelProjBtn.addEventListener('click', ()=>{
@@ -55,7 +54,7 @@ function addEventListners() {
         disableToggle('.projArrLi');
     })
 
-    submitItemBtn.addEventListener('click', ()=>{
+    submitItemBtn.addEventListener('submit', ()=>{
         //get the index number from the submitItemBtn
         let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
         //call a method using the index number

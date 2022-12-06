@@ -82,9 +82,7 @@ function displayAllItemFlattedArray(arr, obj) {
 
         }
     })  
-
-    // cpltItemAll(arr);
-    // deleteItemAll(arr);  
+     
 }
 
 function cpltItemAll(arr, obj) {
