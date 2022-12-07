@@ -1,6 +1,6 @@
 import { removeAllChildren } from '../helpers/remove-child';
 import { dueDateLis } from './combine-display-all-items';
-import { displayItemArr } from './display-itemArr';
+import { itemArrUl, displayItemArr } from './display-itemArr';
 import { projArr } from './proj-class.js';
 import { displayAddItemBtn } from './generate-addItem-btn';
 import { addProjBtn } from './add-eventlistners';
@@ -72,6 +72,7 @@ function deleteProj(projArr) {
                 toggleProjs(addItemBtn);
             } else {
                 activeProjTitleDiv.textContent = 'No active project. Add a project.'
+                removeAllChildren(itemArrUl)
                 addItemBtn.classList.add('hidden');
             }
 

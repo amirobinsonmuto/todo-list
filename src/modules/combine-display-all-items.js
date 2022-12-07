@@ -82,6 +82,12 @@ function displayAllItemFlattedArray(arr, obj) {
 
         }
     })  
+
+    if(itemArrUl.firstChild){
+        let editMessage = document.createElement('p');
+        editMessage.textContent = 'Please go to a respective project to edit a to-do item.';
+        itemArrUl.append(editMessage);
+    }
      
 }
 
