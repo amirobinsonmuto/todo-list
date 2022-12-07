@@ -67,8 +67,14 @@ function deleteProj(projArr) {
             let index = e.target.parentElement.getAttribute('id');
             projArr.splice(index, 1);
             removeAllChildren(projArrUl);
-            displayProjArr(addProjBtn);
-            toggleProjs(addItemBtn);
+            if (projArr.length >= 1) {
+                displayProjArr(addProjBtn);
+                toggleProjs(addItemBtn);
+            } else {
+                activeProjTitleDiv.textContent = 'No active project. Add a project.'
+                addItemBtn.classList.add('hidden');
+            }
+
         })
     })
 }
