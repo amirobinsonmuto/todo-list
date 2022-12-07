@@ -4,7 +4,7 @@ import { projFormDiv, projForm,  submitProjBtn, cancelProjBtn,
         from './generate-proj-form.js';
 import { projArr, createProjObj } from './proj-class.js';
 import { addItemBtn, displayAddItemBtn } from './generate-addItem-btn.js';
-import { itemFormDiv, submitItemBtn, cancelItemBtn,
+import { itemFormDiv, itemForm, submitItemBtn, cancelItemBtn,
         generateItemForm, displaySubmitItemBtn, displayCancelItemBtn } 
         from './generate-item-form.js';
 import { removeAllChildren } from '../helpers/remove-child';
@@ -31,7 +31,9 @@ function addEventListners() {
         disableToggle('.projArrLi');
     })
 
-    submitProjBtn.addEventListener('click', ()=>{ 
+    //submitProjBtn
+    projForm.addEventListener('submit', (event)=>{ 
+        event.preventDefault();
         createProjObj(addItemBtn); 
         projFormDiv.removeChild(projForm);
         displayProjArr(addProjBtn);
@@ -54,7 +56,7 @@ function addEventListners() {
         disableToggle('.projArrLi');
     })
 
-    submitItemBtn.addEventListener('click', ()=>{
+    itemForm.addEventListener('submit', ()=>{
         //get the index number from the submitItemBtn
         let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
         //call a method using the index number
