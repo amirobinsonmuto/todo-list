@@ -1,4 +1,12 @@
 import { removeAllChildren } from '../helpers/remove-child';
+import { addItemBtn, displayAddItemBtn } from './generate-addItem-btn';
+import { itemFormDiv, submitItemBtn, cancelItemBtn,
+    generateItemForm, displaySubmitItemBtn, displayCancelItemBtn,
+    saveEditItemBtn, titleInput, descrInput, dueDateInput } 
+    from './generate-item-form.js';
+import { disableToggle, activateToggle } from '../helpers/disable-toggle';
+import { projTitleInput } from './generate-proj-form';
+
 
 const itemArrUl = document.getElementById('itemarr-ul');
     
@@ -29,12 +37,16 @@ function displayItemArr(itemArr) {
             let itemArrLiItemDueDate = document.createElement('p');
             itemArrLiItemDueDate.textContent = 'Due: ' + el.itemDueDate;
 
+            let itemEditBtn = document.createElement('p');
+            itemEditBtn.textContent = 'Edit';
+            itemEditBtn.classList.add('itemEditBtn');
+
             let delIcon = document.createElement("img")
             delIcon.setAttribute('src', "../node_modules/bootstrap-icons/icons/trash.svg");
             delIcon.classList.add('filter-red')
             delIcon.classList.add('delIcon');
 
-        rightDiv.append(itemArrLiItemDueDate, delIcon);
+        rightDiv.append(itemArrLiItemDueDate, itemEditBtn, delIcon);
 
         itemArrLi.append(leftDiv, rightDiv);
         itemArrLi.classList.add('itemArrLi');
@@ -48,15 +60,18 @@ function displayItemArr(itemArr) {
     })  
 
     cpltItem(itemArr);  
+    editItem(itemArr);
     deleteItem(itemArr);
     
 }
+
+let index;
 
 function cpltItem(itemArr) {
     let cpltIcons = document.querySelectorAll('.cpltIcon');
     cpltIcons.forEach( (cpltIcon) => {
         cpltIcon.addEventListener('click', (e) => {
-                let index = e.target.parentElement.parentElement.getAttribute('data-itemindexnum');
+                index = e.target.parentElement.parentElement.getAttribute('data-itemindexnum');
                 itemArr[index].isItemComplete = true;
                 displayItemArr(itemArr);
         })
@@ -67,12 +82,42 @@ function deleteItem(itemArr) {
     let delIcons = document.querySelectorAll('.delIcon');
     delIcons.forEach( (del) => {
         del.addEventListener('click', (e) => {
-            let index = e.target.parentElement.getAttribute('data-itemindexnum');
+            index = e.target.parentElement.parentElement.getAttribute('data-itemindexnum');
             itemArr.splice(index, 1);
             removeAllChildren(itemArrUl);
             displayItemArr(itemArr);
         })
     })
 }
+
+function editItem(itemArr) {
+    let itemEditBtns = document.querySelectorAll('.itemEditBtn');
+    itemEditBtns.forEach((editBtn) => {
+        editBtn.addEventListener('click', (e) => {
+            index = e.target.parentElement.parentElement.getAttribute('data-itemindexnum');
+            generateItemForm(addItemBtn);
+            titleInput.value = itemArr[index].itemTitle;
+            descrInput.value = itemArr[index].itemDesc;
+            dueDateInput.value = itemArr[index].itemDueDate;
+            saveEditItemBtn();      
+            displayCancelItemBtn();
+            disableToggle('.projArrLi');
+        })
+    })
+}
+
+// function saveEditItem() {
+//     let saveBtns = document.getElementById('saveBtn');
+//     saveBtns.forEach((saveBtn) => {
+//         //get the index number from the submitItemBtn
+//         let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
+//         //call a method using the index number
+//         projArr[submitItemBtnIndex].createItemObj();
+//         removeAllChildren(itemFormDiv);
+//         displayItemArr(projArr[submitItemBtnIndex].itemArr);
+//         displayAddItemBtn();
+//         activateToggle('.projArrLi');
+//     })
+// }
 
 export { displayItemArr, deleteItem, itemArrUl, cpltItem}

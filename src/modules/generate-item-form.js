@@ -5,6 +5,8 @@ const itemForm = document.createElement('form');
 itemForm.setAttribute('id', 'itemForm')
 const submitItemBtn = document.createElement('button');
 const cancelItemBtn = document.createElement('button');
+const editItemBtn = document.createElement('button');
+
 //title
 const titleDiv = document.createElement('div');
 titleDiv.classList.add('form-group');
@@ -65,7 +67,7 @@ function generateItemForm(addItemBtn) {
 
 //submit button 
 function displaySubmitItemBtn(addItemBtn) {
-    submitItemBtn.textContent = 'submit';
+    submitItemBtn.textContent = 'Submit';
     submitItemBtn.setAttribute('id', 'submitItemBtn');
     submitItemBtn.setAttribute('type', 'submit');
     submitItemBtn.classList.add('btn');
@@ -77,7 +79,7 @@ function displaySubmitItemBtn(addItemBtn) {
 }
 
 function displayCancelItemBtn() {
-    cancelItemBtn.textContent = 'cancel';
+    cancelItemBtn.textContent = 'Cancel';
     cancelItemBtn.setAttribute('id', 'cancelItemBtn');
     cancelItemBtn.classList.add('btn');
     cancelItemBtn.classList.add('btn-secondary');
@@ -85,5 +87,15 @@ function displayCancelItemBtn() {
     itemFormDiv.appendChild(itemForm);
 }
 
-export { itemFormDiv, itemForm,  submitItemBtn, cancelItemBtn,
-         generateItemForm, displaySubmitItemBtn, displayCancelItemBtn }
+function saveEditItemBtn() {
+    editItemBtn.textContent = 'Save';
+    editItemBtn.setAttribute('id', 'saveBtn');
+    editItemBtn.classList.add('btn');
+    editItemBtn.classList.add('btn-primary');
+    itemForm.appendChild(editItemBtn);
+    itemFormDiv.appendChild(itemForm);
+}
+
+export { itemFormDiv, itemForm,  submitItemBtn, cancelItemBtn, saveEditItemBtn,
+         generateItemForm, displaySubmitItemBtn, displayCancelItemBtn,
+        titleInput, descrInput, dueDateInput }
