@@ -64,7 +64,7 @@ function addEventListners() {
         removeAllChildren(itemFormDiv);
         displayItemArr(projArr[submitItemBtnIndex].itemArr);
         displayAddItemBtn();
-        activateToggle('.projArrLi');
+        activateToggle  ('.projArrLi');
     })
 
     cancelItemBtn.addEventListener('click', ()=>{
