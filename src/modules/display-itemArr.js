@@ -102,22 +102,24 @@ function editItem(itemArr) {
             saveEditItemBtn();      
             displayCancelItemBtn();
             disableToggle('.projArrLi');
+            saveEditItem(itemArr)
         })
     })
 }
 
-// function saveEditItem() {
-//     let saveBtns = document.getElementById('saveBtn');
-//     saveBtns.forEach((saveBtn) => {
-//         //get the index number from the submitItemBtn
-//         let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
-//         //call a method using the index number
-//         projArr[submitItemBtnIndex].createItemObj();
-//         removeAllChildren(itemFormDiv);
-//         displayItemArr(projArr[submitItemBtnIndex].itemArr);
-//         displayAddItemBtn();
-//         activateToggle('.projArrLi');
-//     })
-// }
+function saveEditItem(itemArr) {
+    let saveBtn = document.getElementById('saveBtn');
+    saveBtn.addEventListener('click', ()=>{
+        itemArr[index].itemTitle = titleInput.value;
+        itemArr[index].itemDesc = descrInput.value;
+        itemArr[index].itemDueDate = dueDateInput.value;
+        console.log(itemArr[index]);
+        console.log(itemArr);
+        removeAllChildren(itemFormDiv);
+        displayItemArr(itemArr);
+        displayAddItemBtn();
+        activateToggle('.projArrLi');
+    })
+}
 
 export { displayItemArr, deleteItem, itemArrUl, cpltItem}

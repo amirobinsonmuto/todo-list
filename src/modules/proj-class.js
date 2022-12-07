@@ -66,7 +66,6 @@ function createDefaultProjObj(addItemBtn) {
         //create a new proj obj using Project class and push it to projArr
         let newObj = new Project ('Default project', 'Your first project');
         projArr.push(newObj);
-        console.log(projArr);
         let indexNum = projArr.indexOf(newObj);
         addItemBtn.setAttribute('data-indexNum', indexNum);
 }
