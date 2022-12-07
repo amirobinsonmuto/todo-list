@@ -47,10 +47,10 @@ function addEventListners() {
         activateToggle('.projArrLi');
     })
 
-    addItemBtn.addEventListener('click', ()=>{
-        generateItemForm(addItemBtn); 
+    addItemBtn.addEventListener('click', (e)=>{
+        generateItemForm(addItemBtn); //this is showing save and cancel
         displaySubmitItemBtn(addItemBtn); 
-        displayCancelItemBtn();
+        displayCancelItemBtn(); //display cancel at the bottom
         disableToggle('.projArrLi');
     })
 
@@ -69,6 +69,9 @@ function addEventListners() {
         removeAllChildren(itemFormDiv);
         displayAddItemBtn(); 
         activateToggle('.projArrLi');
+        titleInput.value = ''
+        descrInput.value = ''
+        dueDateInput.value = ''
     })
 
     allItemsLi.addEventListener('click', ()=>{

@@ -102,6 +102,7 @@ function editItem(itemArr) {
             saveEditItemBtn();      
             displayCancelItemBtn();
             disableToggle('.projArrLi');
+            submitItemBtn.classList.add('hidden');
             saveEditItem(itemArr)
         })
     })
@@ -109,12 +110,10 @@ function editItem(itemArr) {
 
 function saveEditItem(itemArr) {
     let saveBtn = document.getElementById('saveBtn');
-    saveBtn.addEventListener('click', ()=>{
+    saveBtn.addEventListener('click', (e)=>{
         itemArr[index].itemTitle = titleInput.value;
         itemArr[index].itemDesc = descrInput.value;
         itemArr[index].itemDueDate = dueDateInput.value;
-        console.log(itemArr[index]);
-        console.log(itemArr);
         removeAllChildren(itemFormDiv);
         displayItemArr(itemArr);
         displayAddItemBtn();

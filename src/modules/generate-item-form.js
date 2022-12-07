@@ -1,3 +1,4 @@
+import { removeAllChildren } from "../helpers/remove-child";
 
 //function to generate an from to gater item info
 const itemFormDiv = document.getElementById('item-form-div');
@@ -26,6 +27,9 @@ const dueDateInput = document.createElement('input');
 function generateItemForm(addItemBtn) {
 
     addItemBtn.classList.add('hidden');
+    titleInput.value = ''
+    descrInput.value = ''
+    dueDateInput.value = ''
 
     //title
     titleLabel.textContent = 'Item Title';
@@ -72,6 +76,8 @@ function displaySubmitItemBtn(addItemBtn) {
     submitItemBtn.setAttribute('type', 'submit');
     submitItemBtn.classList.add('btn');
     submitItemBtn.classList.add('btn-primary');
+    submitItemBtn.classList.remove('hidden');
+    editItemBtn.classList.add('hidden');
     itemForm.appendChild(submitItemBtn);
     itemFormDiv.appendChild(itemForm);
     let addItemBtnIndex = addItemBtn.getAttribute('data-indexNum');
@@ -92,6 +98,7 @@ function saveEditItemBtn() {
     editItemBtn.setAttribute('id', 'saveBtn');
     editItemBtn.classList.add('btn');
     editItemBtn.classList.add('btn-primary');
+    editItemBtn.classList.remove('hidden');
     itemForm.appendChild(editItemBtn);
     itemFormDiv.appendChild(itemForm);
 }
