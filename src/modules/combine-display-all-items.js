@@ -66,7 +66,7 @@ function displayAllItemFlattedArray(arr, obj) {
             itemArrLiItemDueDate.textContent = 'Due: ' + el.itemDueDate;
 
             let allDltIcon = document.createElement("img")
-            allDltIcon.setAttribute('src', "../node_modules/bootstrap-icons/icons/trash.svg");
+            allDltIcon.setAttribute('src', "./bootstrap-icons/trash.svg");
             allDltIcon.classList.add('filter-red')
             allDltIcon.classList.add('allDltIcon');
 

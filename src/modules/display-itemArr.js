@@ -40,6 +40,9 @@ function displayItemArr(itemArr) {
             let itemEditBtn = document.createElement('p');
             itemEditBtn.textContent = 'Edit';
             itemEditBtn.classList.add('itemEditBtn');
+            itemEditBtn.classList.add('btn');
+            itemEditBtn.classList.add('btn-outline-primary');
+            itemEditBtn.classList.add('btn-sm');
 
             let delIcon = document.createElement("img")
             delIcon.setAttribute('src', "./bootstrap-icons/trash.svg");
