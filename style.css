@@ -190,33 +190,8 @@ main form {
 }
 
 form {
-    margin-top: 20px;
-}
+    margin: 20px;
 
-/* itemArr display */
-.add-btn  {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    margin-top: 20px;
-    transition: all 0.2s ease-in;
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-}
-
-.add-btn::before{
-    content: url(./bootstrap-icons/plus-circle.svg);
-    width: 1.2rem;
-    height: 1.2rem;
-}
-
-.add-btn:hover {
-    font-weight: 600;
 }
 
 .cpltIcon {
@@ -273,9 +248,33 @@ form {
     pointer-events: none;
 }
 
-
-
 /* btn  */
+
+.add-btn  {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 20px;
+    transition: all 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding-left: 10px;
+}
+
+.add-btn::before{
+    content: url(./bootstrap-icons/plus-circle.svg);
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.add-btn:hover {
+    font-weight: 600;
+}
 
 .btn {
     margin-top:20px;
@@ -289,6 +288,8 @@ form {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+
   
 
 
