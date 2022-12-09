@@ -42,7 +42,7 @@ function displayItemArr(itemArr) {
             itemEditBtn.classList.add('itemEditBtn');
 
             let delIcon = document.createElement("img")
-            delIcon.setAttribute('src', "../node_modules/bootstrap-icons/icons/trash.svg");
+            delIcon.setAttribute('src', "./bootstrap-icons/trash.svg");
             delIcon.classList.add('filter-red')
             delIcon.classList.add('delIcon');
 
