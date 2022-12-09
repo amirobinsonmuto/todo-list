@@ -5,6 +5,7 @@ import { projArr } from './proj-class.js';
 import { displayAddItemBtn } from './generate-addItem-btn';
 import { addProjBtn } from './add-eventlistners';
 import { addItemBtn } from './generate-addItem-btn'
+import { populateStorageProjArr } from './localStorage';
 
 const projArrUl = document.getElementById('projarr-ul');
 const activeProjTitleDiv = document.getElementById('active-proj-title-div');
@@ -66,6 +67,7 @@ function deleteProj(projArr) {
         del.addEventListener('click', (e) => {
             let index = e.target.parentElement.getAttribute('id');
             projArr.splice(index, 1);
+            populateStorageProjArr();
             removeAllChildren(projArrUl);
             if (projArr.length >= 1) {
                 displayProjArr(addProjBtn);
@@ -80,4 +82,4 @@ function deleteProj(projArr) {
     })
 }
 
-export { displayProjArr, toggleProjs, activeProjTitleDiv, deleteProj }  
+export { projArrUl, displayProjArr, toggleProjs, activeProjTitleDiv, deleteProj }  

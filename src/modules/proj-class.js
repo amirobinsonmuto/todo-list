@@ -10,6 +10,19 @@ class Project {
 
     //method - use the factory function to create an item obj. this will be ineheritated 
     //to an item obj
+
+    setProjTitle(projTitle) {
+        this.projTitle = projTitle
+      }
+
+    setProjDescr(projDescr){
+        this.projDescr = projDescr;
+    }
+
+    setItemArr(itemArr){
+        this.itemArr = itemArr;
+    }
+
     createItemObj() {
 
         //factory function to create an item obj
@@ -70,4 +83,4 @@ function createDefaultProjObj(addItemBtn) {
         addItemBtn.setAttribute('data-indexNum', indexNum);
 }
 
-export { projArr, createProjObj, createDefaultProjObj }
+export { Project, projArr, createProjObj, createDefaultProjObj }

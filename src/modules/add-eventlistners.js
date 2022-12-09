@@ -17,6 +17,8 @@ import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatte
         from './display-filtered-items-bydate.js';
 import { display } from '../helpers/display';
 import { disableToggle, activateToggle } from '../helpers/disable-toggle';
+import { populateStorageProjArr } from './localStorage';
+
 
 const addProjBtn = document.getElementById('add-proj-btn');
 function addEventListners() {
@@ -35,6 +37,7 @@ function addEventListners() {
     projForm.addEventListener('submit', (event)=>{ 
         event.preventDefault();
         createProjObj(addItemBtn); 
+        populateStorageProjArr();
         projFormDiv.removeChild(projForm);
         displayProjArr(addProjBtn);
         toggleProjs(addItemBtn);
@@ -61,6 +64,7 @@ function addEventListners() {
         let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
         //call a method using the index number
         projArr[submitItemBtnIndex].createItemObj();
+        populateStorageProjArr();
         removeAllChildren(itemFormDiv);
         displayItemArr(projArr[submitItemBtnIndex].itemArr);
         displayAddItemBtn();
