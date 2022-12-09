@@ -225,6 +225,10 @@ form {
     margin-bottom: 0;
 }
 
+.allCpltIcon {
+    margin-bottom: 0px;
+}
+
 .filter-red {
     filter: invert(21%) sepia(88%) saturate(5957%) hue-rotate(357deg) brightness(98%) contrast(126%);
 }
@@ -238,12 +242,13 @@ form {
 }
 
 .itemArrLi {
-    padding: 10px;
+    padding: 5px 25px 5px 20px;
     border: 1px var(--color-hl-grey) solid;
 } 
 
 .right-div, .left-div {
     display: flex;
+    align-items: center;
 }
 
 .itemArrLi:hover {
@@ -268,6 +273,8 @@ form {
     pointer-events: none;
 }
 
+
+
 /* btn  */
 
 .btn {
@@ -277,6 +284,11 @@ form {
     font-size: 1.2rem;
 }
 
+.itemEditBtn {
+    font-size: 0.8rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
   
 
 
