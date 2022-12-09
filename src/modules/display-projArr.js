@@ -22,7 +22,7 @@ function displayProjArr(addProjBtn) {
         projArrTitle.textContent = el.projTitle;
 
         let delProjIcon = document.createElement("img")
-        delProjIcon.setAttribute('src', "../node_modules/bootstrap-icons/icons/trash.svg");
+        delProjIcon.setAttribute('src', "./bootstrap-icons/icons/trash.svg");
         delProjIcon.classList.add('filter-red')
         delProjIcon.classList.add('delProjIcon');
 
