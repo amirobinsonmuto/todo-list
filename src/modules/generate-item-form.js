@@ -1,5 +1,3 @@
-import { removeAllChildren } from "../helpers/remove-child";
-
 //function to generate an from to gater item info
 const itemFormDiv = document.getElementById('item-form-div');
 const itemForm = document.createElement('form');

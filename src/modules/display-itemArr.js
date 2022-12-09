@@ -5,7 +5,6 @@ import { itemFormDiv, submitItemBtn, cancelItemBtn,
     saveEditItemBtn, titleInput, descrInput, dueDateInput } 
     from './generate-item-form.js';
 import { disableToggle, activateToggle } from '../helpers/disable-toggle';
-import { projTitleInput } from './generate-proj-form';
 
 
 const itemArrUl = document.getElementById('itemarr-ul');

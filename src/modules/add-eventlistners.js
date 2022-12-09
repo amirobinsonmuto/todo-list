@@ -1,5 +1,5 @@
 
-import { projFormDiv, projForm,  submitProjBtn, cancelProjBtn,
+import { projFormDiv, projForm, cancelProjBtn,
         generateProjForm, displaySubmitProjBtn, displayCancelProjBtn } 
         from './generate-proj-form.js';
 import { projArr, createProjObj } from './proj-class.js';
@@ -53,9 +53,9 @@ function addEventListners() {
     })
 
     addItemBtn.addEventListener('click', (e)=>{
-        generateItemForm(addItemBtn); //this is showing save and cancel
+        generateItemForm(addItemBtn); 
         displaySubmitItemBtn(addItemBtn); 
-        displayCancelItemBtn(); //display cancel at the bottom
+        displayCancelItemBtn(); 
         disableToggle('.projArrLi');
     })
 

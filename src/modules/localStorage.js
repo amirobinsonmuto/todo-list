@@ -1,4 +1,3 @@
-//import projArr variable
 import { Project, projArr } from './proj-class.js';
 
 //function to save the array to localStorage.

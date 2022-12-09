@@ -2,9 +2,8 @@
 const projArr = []
 
 class Project {
-    constructor(projTitle, projDescr) {
+    constructor(projTitle) {
         this.projTitle = projTitle;
-        this.projDescr = projDescr;
         this.itemArr = []
     };
 
@@ -15,9 +14,6 @@ class Project {
         this.projTitle = projTitle
       }
 
-    setProjDescr(projDescr){
-        this.projDescr = projDescr;
-    }
 
     setItemArr(itemArr){
         this.itemArr = itemArr;
@@ -57,27 +53,24 @@ class Project {
     }
 }
 
-//method - method to actually create a project
 function createProjObj(addItemBtn) {
 
     //get the values from the proj form
     let projTitle = document.getElementById('projTitle');
-    let projDescr = document.getElementById('projDescr');
 
     //create a new proj obj using Project class and push it to projArr
-    let newObj = new Project (projTitle.value, projDescr.value,)
+    let newObj = new Project (projTitle.value)
     projArr.push(newObj);
     let indexNum = projArr.indexOf(newObj);
     addItemBtn.setAttribute('data-indexNum', indexNum);
 
     projTitle.value = "";
-    projDescr.value = "";
 
 };
 
 function createDefaultProjObj(addItemBtn) {
         //create a new proj obj using Project class and push it to projArr
-        let newObj = new Project ('Default project', 'Your first project');
+        let newObj = new Project ('Default project');
         projArr.push(newObj);
         let indexNum = projArr.indexOf(newObj);
         addItemBtn.setAttribute('data-indexNum', indexNum);

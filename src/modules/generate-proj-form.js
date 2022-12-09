@@ -1,4 +1,3 @@
-
 //function to generate an from to gater project info
 const projFormDiv = document.getElementById('proj-form-div');
 const projForm = document.createElement('form');
@@ -9,12 +8,7 @@ const cancelProjBtn = document.createElement('button');
 const projTitleDiv = document.createElement('div');
 projTitleDiv.classList.add('form-group');
 const projTitleLabel = document.createElement('label');
-const projTitleInput = document.createElement('input');
-//description
-const projDescrDiv = document.createElement('div');
-projDescrDiv.classList.add('form-group');
-const projDescrLabel = document.createElement('label');
-const projDescrInput = document.createElement('textarea');
+const projTitleInput = document.createElement('input'); 
 
 
 function generateProjForm(addProjBtn) {
@@ -33,19 +27,6 @@ function generateProjForm(addProjBtn) {
 
     projTitleDiv.append(projTitleLabel, projTitleInput);
     projForm.appendChild(projTitleDiv);
-
-    //description
-    projDescrLabel.textContent = 'Project Description';
-    projDescrLabel.setAttribute('for', 'projDescr');
-    projDescrLabel.classList.add('form-label');
-    projDescrInput.setAttribute('rows', '4');
-    projDescrInput.setAttribute('cols', '20');
-    projDescrInput.setAttribute('class', 'form-control');
-    projDescrInput.setAttribute('id', 'projDescr');
-
-    projDescrDiv.append(projDescrLabel, projDescrInput);
-    projForm.appendChild(projDescrDiv);
-
     projFormDiv.appendChild(projForm);
 
 }
