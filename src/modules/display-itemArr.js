@@ -9,7 +9,7 @@ import { disableToggle, activateToggle } from '../helpers/disable-toggle';
 
 const itemArrUl = document.getElementById('itemarr-ul');
     
-function displayItemArr(itemArr) {
+const displayItemArr = (itemArr) => {
 
     removeAllChildren(itemArrUl);
 
@@ -69,7 +69,7 @@ function displayItemArr(itemArr) {
 
 let index;
 
-function cpltItem(itemArr) {
+const cpltItem = (itemArr) => {
     let cpltIcons = document.querySelectorAll('.cpltIcon');
     cpltIcons.forEach( (cpltIcon) => {
         cpltIcon.addEventListener('click', (e) => {
@@ -80,7 +80,7 @@ function cpltItem(itemArr) {
     })
 }
 
-function deleteItem(itemArr) {
+const deleteItem = (itemArr) => {
     let delIcons = document.querySelectorAll('.delIcon');
     delIcons.forEach( (del) => {
         del.addEventListener('click', (e) => {
@@ -92,7 +92,7 @@ function deleteItem(itemArr) {
     })
 }
 
-function editItem(itemArr) {
+const editItem = (itemArr) => {
     let itemEditBtns = document.querySelectorAll('.itemEditBtn');
     itemEditBtns.forEach((editBtn) => {
         editBtn.addEventListener('click', (e) => {
@@ -110,7 +110,7 @@ function editItem(itemArr) {
     })
 }
 
-function saveEditItem(itemArr) {
+const saveEditItem = (itemArr) => {
     let saveBtn = document.getElementById('saveBtn');
     saveBtn.addEventListener('click', (e)=>{
         itemArr[index].itemTitle = titleInput.value;

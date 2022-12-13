@@ -22,7 +22,7 @@ dueDateDiv.classList.add('form-group');
 const dueDateLabel = document.createElement('label');
 const dueDateInput = document.createElement('input');
 
-function generateItemForm(addItemBtn) {
+const generateItemForm = (addItemBtn) => {
 
     addItemBtn.classList.add('hidden');
     titleInput.value = ''
@@ -68,7 +68,7 @@ function generateItemForm(addItemBtn) {
 }   
 
 //submit button 
-function displaySubmitItemBtn(addItemBtn) {
+const displaySubmitItemBtn = (addItemBtn) => {
     submitItemBtn.textContent = 'Submit';
     submitItemBtn.setAttribute('id', 'submitItemBtn');
     submitItemBtn.setAttribute('type', 'submit');
@@ -82,7 +82,7 @@ function displaySubmitItemBtn(addItemBtn) {
     submitItemBtn.setAttribute('data-indexNum', addItemBtnIndex);
 }
 
-function displayCancelItemBtn() {
+const displayCancelItemBtn = () => {
     cancelItemBtn.textContent = 'Cancel';
     cancelItemBtn.setAttribute('id', 'cancelItemBtn');
     cancelItemBtn.classList.add('btn');
@@ -91,7 +91,7 @@ function displayCancelItemBtn() {
     itemFormDiv.appendChild(itemForm);
 }
 
-function saveEditItemBtn() {
+const saveEditItemBtn = () => {
     editItemBtn.textContent = 'Save';
     editItemBtn.setAttribute('id', 'saveBtn');
     editItemBtn.classList.add('btn');

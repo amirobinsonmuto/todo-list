@@ -10,7 +10,7 @@ import { populateStorageProjArr } from './localStorage';
 const projArrUl = document.getElementById('projarr-ul');
 const activeProjTitleDiv = document.getElementById('active-proj-title-div');
 
-function displayProjArr(addProjBtn) {
+const displayProjArr = (addProjBtn) => {
 
     addProjBtn.classList.remove('hidden');
     removeAllChildren(projArrUl);
@@ -43,7 +43,7 @@ function displayProjArr(addProjBtn) {
     deleteProj(projArr);
 }
 
-function toggleProjs(addItemBtn) {
+const toggleProjs = (addItemBtn) => {
     let projArrLis = document.querySelectorAll('.projArrLi');
     projArrLis.forEach( (li) => {
         li.addEventListener('click', ()=>{
@@ -61,7 +61,7 @@ function toggleProjs(addItemBtn) {
     })
 }
 
-function deleteProj(projArr) {
+const deleteProj = (projArr) => {
     let delProjIcons = document.querySelectorAll('.delProjIcon');
     delProjIcons.forEach( (del) => {
         del.addEventListener('click', (e) => {

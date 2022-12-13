@@ -15,7 +15,7 @@ class Project {
       }
 
 
-    setItemArr(itemArr){
+    setItemArr(itemArr) {
         this.itemArr = itemArr;
     }
 
@@ -53,7 +53,7 @@ class Project {
     }
 }
 
-function createProjObj(addItemBtn) {
+const createProjObj = (addItemBtn) => {
 
     //get the values from the proj form
     let projTitle = document.getElementById('projTitle');
@@ -68,7 +68,7 @@ function createProjObj(addItemBtn) {
 
 };
 
-function createDefaultProjObj(addItemBtn) {
+const createDefaultProjObj = (addItemBtn) => {
         //create a new proj obj using Project class and push it to projArr
         let newObj = new Project ('Default project');
         projArr.push(newObj);

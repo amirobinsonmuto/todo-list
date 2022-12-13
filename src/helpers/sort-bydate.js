@@ -1,9 +1,9 @@
 //Call back this function with a built-in method 'sort'.
-function byDate(a,b){
+const byDate = (a,b) => {
     return new Date(a.itemDueDate) - new Date(b.itemDueDate)
   }
 
-function getToday(){
+const getToday = () => {
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, '0');
   let mm = String(today.getMonth() + 1).padStart(2, '0'); 
@@ -12,7 +12,7 @@ function getToday(){
   return new Date(today);
 }
 
-function getDifference(el) {
+const getDifference = (el) => {
   let date1 = getToday();
   let dueDate = new Date(el.itemDueDate);
   let dueDatedd = String(dueDate.getDate()).padStart(2, '0');

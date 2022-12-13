@@ -1,7 +1,7 @@
    
 const addItemBtn = document.createElement('button');
 
-function displayAddItemBtn() {
+const displayAddItemBtn = () => {
     addItemBtn.textContent = 'Add todo item';
     const itemFormDiv = document.getElementById('item-form-div');
     itemFormDiv.appendChild(addItemBtn);

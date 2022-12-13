@@ -21,7 +21,7 @@ import { populateStorageProjArr } from './localStorage';
 
 
 const addProjBtn = document.getElementById('add-proj-btn');
-function addEventListners() {
+const addEventListners = function addAllEventListnersToAllButtons () {
 
     const hamburgerMenu = document.getElementById('hamburger-menu');
     hamburgerMenu.addEventListener('click', display);

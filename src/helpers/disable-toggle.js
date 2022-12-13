@@ -1,9 +1,9 @@
-function disableToggle(classNameStr) {
+const disableToggle = (classNameStr) => {
     let lis = document.querySelectorAll(classNameStr)
     lis.forEach(li => li.classList.add('disable-click'));
 }
 
-function activateToggle(classNameStr) {
+const activateToggle = (classNameStr) => {
     let lis = document.querySelectorAll(classNameStr)
     lis.forEach(li => li.classList.remove('disable-click'));
 }

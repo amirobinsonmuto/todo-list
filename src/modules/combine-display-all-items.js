@@ -10,7 +10,7 @@ let allItemsFlatted = []
 const allItemsLi = document.getElementById('display-all-items');
 let dueDateLis = document.querySelectorAll('.due-date-li');
 
-function combineAllItems(){
+const combineAllItems = () => {
     let allItems = [];
     for (let i=0; i<projArr.length; i++){
         allItems.push(projArr[i].itemArr);
@@ -19,7 +19,7 @@ function combineAllItems(){
     allItemsFlatted.sort(byDate);
 }
 
-function displayAllItemFlattedArray(arr, obj) {
+const displayAllItemFlattedArray = (arr, obj) => {
     removeAllChildren(itemArrUl);
     removeAllChildren(itemFormDiv);
 
@@ -91,7 +91,7 @@ function displayAllItemFlattedArray(arr, obj) {
      
 }
 
-function cpltItemAll(arr, obj) {
+const cpltItemAll = (arr, obj) => {
     let allCpltIcons = document.querySelectorAll('.allCpltIcon');
     allCpltIcons.forEach( (allCpltIcon) => {
         allCpltIcon.addEventListener('click', (e) => {
@@ -114,7 +114,7 @@ function cpltItemAll(arr, obj) {
     })
 }
 
-function deleteItemAll(arr, obj) {
+const deleteItemAll = (arr, obj) => {
     let allDltIcons = document.querySelectorAll('.allDltIcon');
     allDltIcons.forEach( (del) => {
         del.addEventListener('click', (e) => {

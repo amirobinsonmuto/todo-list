@@ -11,7 +11,7 @@ const projTitleLabel = document.createElement('label');
 const projTitleInput = document.createElement('input'); 
 
 
-function generateProjForm(addProjBtn) {
+const generateProjForm = (addProjBtn) => {
 
     addProjBtn.classList.add('hidden');
     
@@ -32,7 +32,7 @@ function generateProjForm(addProjBtn) {
 }
     
 //submit button 
-function displaySubmitProjBtn() {
+const displaySubmitProjBtn = () => {
     submitProjBtn.setAttribute('value', 'submit');
     submitProjBtn.textContent = 'Submit'    ;
     submitProjBtn.setAttribute('id', 'submitProjBtn');
@@ -43,7 +43,7 @@ function displaySubmitProjBtn() {
     projFormDiv.appendChild(projForm);
 }
 
-function displayCancelProjBtn() {
+const displayCancelProjBtn = () => {
     cancelProjBtn.textContent = 'Cancel';
     cancelProjBtn.setAttribute('id', 'cancelProjBtn');
     cancelProjBtn.classList.add('btn');
