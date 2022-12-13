@@ -6,17 +6,17 @@ import { activeProjTitleDiv }  from './display-projArr';
 import { byDate } from '../helpers/sort-bydate';
 import { todayLi,thisWeekLi } from './display-filtered-items-bydate';
 
-let allItemsFlatted = []
+
 const allItemsLi = document.getElementById('display-all-items');
-let dueDateLis = document.querySelectorAll('.due-date-li');
+const dueDateLis = document.querySelectorAll('.due-date-li');
+let allItemsFlatted = []
 
 const combineAllItems = () => {
     let allItems = [];
-    for (let i=0; i<projArr.length; i++){
-        allItems.push(projArr[i].itemArr);
-    }
-    allItemsFlatted = allItems.flat(1);
-    allItemsFlatted.sort(byDate);
+    projArr.forEach( el => {
+        allItems.push(el.itemArr);
+    })
+    allItemsFlatted = allItems.flat(1).sort(byDate);
 }
 
 const displayAllItemFlattedArray = (arr, obj) => {
