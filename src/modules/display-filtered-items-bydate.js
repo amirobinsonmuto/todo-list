@@ -1,10 +1,9 @@
-import { allItemsFlatted, displayAllItemFlattedArray } 
-        from './combine-display-all-items';
+import { allItemsFlatted } from './combine-display-all-items';
 import { getDifference } from '../helpers/sort-bydate';
 
 const todayLi = document.getElementById('today-li');
 const thisWeekLi = document.getElementById('this-week-li');
-let filteredAllItemsFlatted
+let filteredAllItemsFlatted = [];
 
 const displayFilteredItemsByDate = (num) => {
 

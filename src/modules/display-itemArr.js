@@ -1,11 +1,25 @@
 import { removeAllChildren } from '../helpers/remove-child';
-import { addItemBtn, displayAddItemBtn } from './generate-addItem-btn';
-import { itemFormDiv, submitItemBtn, cancelItemBtn,
-    generateItemForm, displaySubmitItemBtn, displayCancelItemBtn,
-    saveEditItemBtn, titleInput, descrInput, dueDateInput } 
-    from './generate-item-form.js';
-import { disableToggle, activateToggle } from '../helpers/disable-toggle';
 
+import { 
+    addItemBtn, 
+    displayAddItemBtn 
+} from './generate-addItem-btn';
+
+import { 
+    itemFormDiv, 
+    submitItemBtn, 
+    generateItemForm, 
+    displayCancelItemBtn,
+    saveEditItemBtn, 
+    titleInput, 
+    descrInput, 
+    dueDateInput 
+} from './generate-item-form.js';
+
+import { 
+    disableToggle, 
+    activateToggle 
+} from '../helpers/disable-toggle';
 
 const itemArrUl = document.getElementById('itemarr-ul');
     

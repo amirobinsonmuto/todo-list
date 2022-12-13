@@ -1,22 +1,65 @@
 
-import { projFormDiv, projForm, cancelProjBtn,
-        generateProjForm, displaySubmitProjBtn, displayCancelProjBtn } 
-        from './generate-proj-form.js';
-import { projArr, createProjObj } from './proj-class.js';
-import { addItemBtn, displayAddItemBtn } from './generate-addItem-btn.js';
-import { itemFormDiv, itemForm, submitItemBtn, cancelItemBtn,
-        generateItemForm, displaySubmitItemBtn, displayCancelItemBtn } 
-        from './generate-item-form.js';
+import { 
+    projFormDiv, 
+    projForm, 
+    cancelProjBtn,
+    generateProjForm, 
+    displaySubmitProjBtn, 
+    displayCancelProjBtn 
+} from './generate-proj-form.js';
+
+import { 
+    projArr, 
+    createProjObj
+} from './proj-class.js';
+
+import { 
+    addItemBtn, 
+    displayAddItemBtn
+} from './generate-addItem-btn.js';
+
+import { 
+    itemFormDiv, 
+    itemForm, 
+    submitItemBtn, 
+    cancelItemBtn,
+    generateItemForm, 
+    displaySubmitItemBtn, 
+    displayCancelItemBtn 
+} from './generate-item-form.js';
+
 import { removeAllChildren } from '../helpers/remove-child';
-import { displayProjArr, toggleProjs } from './display-projArr';
+
+import { 
+    displayProjArr, 
+    toggleProjs 
+} from './display-projArr';
+
 import { displayItemArr } from './display-itemArr';
-import { allItemsFlatted, allItemsLi, combineAllItems, displayAllItemFlattedArray
-        , deleteItemAll, cpltItemAll } 
-        from './combine-display-all-items';
-import { thisWeekLi, todayLi, displayFilteredItemsByDate, filteredAllItemsFlatted } 
-        from './display-filtered-items-bydate.js';
+
+import { 
+    allItemsFlatted, 
+    allItemsLi, 
+    combineAllItems, 
+    displayAllItemFlattedArray, 
+    deleteItemAll, 
+    cpltItemAll 
+} from './combine-display-all-items';
+
+import { 
+    thisWeekLi, 
+    todayLi, 
+    displayFilteredItemsByDate, 
+    filteredAllItemsFlatted 
+} from './display-filtered-items-bydate.js';
+
 import { display } from '../helpers/display';
-import { disableToggle, activateToggle } from '../helpers/disable-toggle';
+
+import {
+    disableToggle, 
+    activateToggle
+} from '../helpers/disable-toggle';
+
 import { populateStorageProjArr } from './localStorage';
 
 
