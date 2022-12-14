@@ -76,14 +76,14 @@ const displayAllItemFlattedArray = (arr, obj) => {
         itemArrLi.classList.add('itemArrLi');
         itemArrUl.append(itemArrLi);
 
-        if (el.isItemComplete === true) {
+        if(el.isItemComplete) {
             itemArrLiItemTitle.classList.add('strike-through');
             allCpltIcon.checked = true;
 
         }
     })  
 
-    if(itemArrUl.firstChild){
+    if(itemArrUl.firstChild) {
         let editMessage = document.createElement('p');
         editMessage.textContent = 'Please go to a respective project to edit a to-do item.';
         itemArrUl.append(editMessage);
@@ -99,11 +99,11 @@ const cpltItemAll = (arr, obj) => {
             arr[index].isItemComplete = true;
             displayAllItemFlattedArray(arr, obj);
             
-            //find the index number of the proj object that matches the proj title 
+            // find the index number of the proj object that matches the proj title 
             const whichProject = projArr.find( el => el.projTitle == arr[index].projTitle );
             const projArrIndex = projArr.indexOf(whichProject)
 
-            //find the index number of the item object in the respective proj obj
+            // find the index number of the item object in the respective proj obj
             const findItemObj = projArr[projArrIndex].itemArr.find(el => el == arr[index]);
             let finalindex = projArr[projArrIndex].itemArr.indexOf(findItemObj);
             projArr[projArrIndex].itemArr[finalindex].isItemComplete = true;
@@ -141,4 +141,3 @@ const deleteItemAll = (arr, obj) => {
 
 export { allItemsFlatted, allItemsLi, dueDateLis, combineAllItems, 
     displayAllItemFlattedArray, deleteItemAll, cpltItemAll }
-

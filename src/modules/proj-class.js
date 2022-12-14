@@ -1,4 +1,4 @@
-//Project class
+// Project class
 const projArr = []
 
 class Project {
@@ -7,8 +7,9 @@ class Project {
         this.itemArr = []
     };
 
-    //method - use the factory function to create an item obj. this will be ineheritated 
-    //to an item obj
+    /**  method - use the factory function to create an item obj. this will be 
+    * ineheritated to an item obj
+    */
 
     setProjTitle(projTitle) {
         this.projTitle = projTitle
@@ -21,7 +22,7 @@ class Project {
 
     createItemObj() {
 
-        //factory function to create an item obj
+        // factory function to create an item obj
         function todoItemFactory(projTitle, itemTitle, itemDesc, itemDueDate) {
             return {
             projTitle: projTitle,
@@ -32,12 +33,12 @@ class Project {
             }
         }
 
-        //get the form values from the item form
+        // get the form values from the item form
         let itemTitle = document.getElementById('itemTitle');
         let itemDescr = document.getElementById('itemDescr');
         let itemDueDate = document.getElementById('itemDueDate');
 
-        //create an item obj using the factory function and push it to the itemArr
+        // create an item obj using the factory function and push it to the itemArr
         this.itemArr.push(todoItemFactory(
             this.projTitle,
             itemTitle.value,
@@ -55,10 +56,10 @@ class Project {
 
 const createProjObj = (addItemBtn) => {
 
-    //get the values from the proj form
+    // get the values from the proj form
     let projTitle = document.getElementById('projTitle');
 
-    //create a new proj obj using Project class and push it to projArr
+    // create a new proj obj using Project class and push it to projArr
     let newObj = new Project (projTitle.value)
     projArr.push(newObj);
     let indexNum = projArr.indexOf(newObj);
@@ -69,7 +70,7 @@ const createProjObj = (addItemBtn) => {
 };
 
 const createDefaultProjObj = (addItemBtn) => {
-        //create a new proj obj using Project class and push it to projArr
+        // reate a new proj obj using Project class and push it to projArr
         let newObj = new Project ('Default project');
         projArr.push(newObj);
         let indexNum = projArr.indexOf(newObj);

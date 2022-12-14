@@ -68,7 +68,7 @@ const displayItemArr = (itemArr) => {
         itemArrLi.classList.add('itemArrLi');
         itemArrUl.append(itemArrLi);
 
-        if (el.isItemComplete === true) {
+        if (el.isItemComplete) {
             itemArrLiItemTitle.classList.add('strike-through');
             cpltIcon.checked = true;
         } 

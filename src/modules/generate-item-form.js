@@ -1,4 +1,4 @@
-//function to generate an from to gater item info
+// function to generate an from to gater item info
 const itemFormDiv = document.getElementById('item-form-div');
 const itemForm = document.createElement('form');
 itemForm.setAttribute('id', 'itemForm')
@@ -6,17 +6,17 @@ const submitItemBtn = document.createElement('button');
 const cancelItemBtn = document.createElement('button');
 const editItemBtn = document.createElement('button');
 
-//title
+// title
 const titleDiv = document.createElement('div');
 titleDiv.classList.add('form-group');
 const titleLabel = document.createElement('label');
 const titleInput = document.createElement('input');
-//description
+// description
 const descrDiv = document.createElement('div');
 descrDiv.classList.add('form-group');
 const descrLabel = document.createElement('label');
 const descrInput = document.createElement('textarea');
-//duedate
+// duedate
 const dueDateDiv = document.createElement('div');
 dueDateDiv.classList.add('form-group');
 const dueDateLabel = document.createElement('label');
@@ -29,7 +29,7 @@ const generateItemForm = (addItemBtn) => {
     descrInput.value = ''
     dueDateInput.value = ''
 
-    //title
+    // title
     titleLabel.textContent = 'Item Title';
     titleLabel.setAttribute('for', 'title');
     titleLabel.setAttribute('class', 'form-label');
@@ -40,7 +40,7 @@ const generateItemForm = (addItemBtn) => {
     titleDiv.append(titleLabel, titleInput);
     itemForm.appendChild(titleDiv);
 
-    //description
+    // description
     descrLabel.textContent = 'Description';
     descrLabel.setAttribute('for', 'descr');
     descrLabel.setAttribute('class', 'form-label');
@@ -51,7 +51,7 @@ const generateItemForm = (addItemBtn) => {
     descrDiv.append(descrLabel, descrInput);
     itemForm.appendChild(descrDiv);
 
-    //dueDate
+    // dueDate
     dueDateLabel.textContent = 'Due Date';
     dueDateLabel.setAttribute('for', 'dueDate');
     dueDateLabel.setAttribute('class', 'form-label');
@@ -62,12 +62,12 @@ const generateItemForm = (addItemBtn) => {
     dueDateDiv.append(dueDateLabel, dueDateInput);
     itemForm.appendChild(dueDateDiv);
     
-    //append
+    // append
     itemFormDiv.appendChild(itemForm);
 
 }   
 
-//submit button 
+// submit button 
 const displaySubmitItemBtn = (addItemBtn) => {
     submitItemBtn.textContent = 'Submit';
     submitItemBtn.setAttribute('id', 'submitItemBtn');

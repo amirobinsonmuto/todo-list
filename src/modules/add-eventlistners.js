@@ -76,7 +76,7 @@ const addEventListners = function addAllEventListnersToAllButtons () {
         disableToggle('.projArrLi');
     })
 
-    //submitProjBtn
+    // submitProjBtn
     projForm.addEventListener('submit', (event)=>{ 
         event.preventDefault();
         createProjObj(addItemBtn); 
@@ -103,9 +103,9 @@ const addEventListners = function addAllEventListnersToAllButtons () {
     })
 
     itemForm.addEventListener('submit', ()=>{
-        //get the index number from the submitItemBtn
+        // get the index number from the submitItemBtn
         let submitItemBtnIndex = submitItemBtn.getAttribute('data-indexNum');
-        //call a method using the index number
+        // call a method using the index number
         projArr[submitItemBtnIndex].createItemObj();
         populateStorageProjArr();
         removeAllChildren(itemFormDiv);
@@ -148,11 +148,3 @@ const addEventListners = function addAllEventListnersToAllButtons () {
 }
 
 export { addProjBtn, addEventListners }
-
-
-
-
-
-
-
-

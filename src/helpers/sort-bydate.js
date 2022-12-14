@@ -1,4 +1,4 @@
-//Call back this function with a built-in method 'sort'.
+// Call back this function with a built-in method 'sort'.
 const byDate = (a,b) => {
     return new Date(a.itemDueDate) - new Date(b.itemDueDate)
   }

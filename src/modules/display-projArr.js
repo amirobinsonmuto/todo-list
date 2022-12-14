@@ -32,7 +32,7 @@ const displayProjArr = (addProjBtn) => {
         projArrLi.classList.add('projArrLi');
     })
 
-    //display the last element's proj title in the main
+    // display the last element's proj title in the main
     projArrUl.lastElementChild.classList.add('active');
 
     dueDateLis.forEach(f => f.classList.remove('active'));

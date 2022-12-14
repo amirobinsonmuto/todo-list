@@ -1,10 +1,10 @@
-//function to generate an from to gater project info
+// function to generate an from to gater project info
 const projFormDiv = document.getElementById('proj-form-div');
 const projForm = document.createElement('form');
 projForm.setAttribute('id', 'projForm')
 const submitProjBtn = document.createElement('button');
 const cancelProjBtn = document.createElement('button');
-//title
+// title
 const projTitleDiv = document.createElement('div');
 projTitleDiv.classList.add('form-group');
 const projTitleLabel = document.createElement('label');
@@ -15,7 +15,7 @@ const generateProjForm = (addProjBtn) => {
 
     addProjBtn.classList.add('hidden');
     
-    //title
+    // title
     projTitleLabel.textContent = 'Project Title';
     projTitleLabel.setAttribute('for', 'projTitle');
     projTitleLabel.classList.add('form-label');
@@ -31,7 +31,7 @@ const generateProjForm = (addProjBtn) => {
 
 }
     
-//submit button 
+// submit button 
 const displaySubmitProjBtn = () => {
     submitProjBtn.setAttribute('value', 'submit');
     submitProjBtn.textContent = 'Submit'    ;
