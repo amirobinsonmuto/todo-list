@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
     <script defer src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>To Do List</h1>
-        <img src="./bootstrap-icons/list.svg"   
-             alt="hamburger menu icon"
-             class="filter-white hamburger-icon hamburger-hidden"
-             id="hamburger-menu">
+      <h1>To Do List</h1>
+      <img
+        src="./bootstrap-icons/list.svg"
+        alt="hamburger menu icon"
+        class="filter-white hamburger-icon hamburger-hidden"
+        id="hamburger-menu"
+      />
     </header>
-    <nav class="sidebar" id="sidebar"> 
-        <div>
-            <ul>
-                <li class="due-date-li" id="display-all-items">All To-do Items</li>
-                <li class="due-date-li" id="today-li">Due Today</li>
-                <li class="due-date-li" id="this-week-li">Due in a week</li>
-            </ul>
-        </div>       
-        <div>
-            <h3>Projects</h3>
-            <ul id ="projarr-ul"></ul>
-        </div> 
-        <button id="add-proj-btn" class="add-btn btn">
-                Add Project
-        </button>
-        <div id="proj-form-div"></div>
-
-        
+    <nav class="sidebar" id="sidebar">
+      <div>
+        <ul>
+          <li class="due-date-li" id="display-all-items">All To-do Items</li>
+          <li class="due-date-li" id="today-li">Due Today</li>
+          <li class="due-date-li" id="this-week-li">Due in a week</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Projects</h3>
+        <ul id="projarr-ul"></ul>
+      </div>
+      <button id="add-proj-btn" class="add-btn btn">Add Project</button>
+      <div id="proj-form-div"></div>
     </nav>
     <main>
-        <div>
-            <h2 id="active-proj-title-div"></h2>
-        </div>
-        <div>
-            <ul id ="itemarr-ul"></ul>
-        </div>
-        <div id="item-form-div">
-
-        </div>
-
-        
+      <div>
+        <h2 id="active-proj-title-div"></h2>
+      </div>
+      <div>
+        <ul id="itemarr-ul"></ul>
+      </div>
+      <div id="item-form-div"></div>
     </main>
 
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
